@@ -249,6 +249,10 @@ Wie niet slaagt, krijgt een tweede examenkans in de vorm van een individuele opd
 
 Deze individuele opdracht wordt meteen vastgelegd en besproken op het finale evaluatiemoment. Als je nog geen individuele opdracht gekregen hebt op het evaluatiemoment (bijvoorbeeld omdat je afwezig was), dan kom je naar de feedback.
 
-Studenten afstandsleren kunnen dit ook per e-mail regelen of een afspraak maken om dit te bespreken via Teams.
+Studenten afstandsleren kunnen dit ook per e-mail regelen of een afspraak maken om dit te bespreken via Teams, mits dit gebeurt vóór aanvang van het intersemestrieel reces.
 
 **Wie na afloop van de feedback nog geen afspraak gemaakt heeft voor een individuele opdracht, geeft daarmee te kennen niet te willen deelnemen aan de 2e examenkans.**
+
+## Licentie-informatie
+
+Deze syllabus is samengesteld door [Bert Van Vreckem](https://github.com/bertvv/). De tekst van de syllabus en de slides vallen onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/).
