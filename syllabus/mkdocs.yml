@@ -1,0 +1,10 @@
+site_name: "Infrastructure Automation: Syllabus"
+site_url: https://example.com/
+nav:
+  - Studiewijzer: index.md
+  - Intro: intro.md
+  - Containers: containers.md
+  - CICD: ci-cd.md
+  - Troubleshooting: troubleshooting.md
+  - ConfigMgmt: cfgmgmt.md
+  - Monitoring: monitoring.md
