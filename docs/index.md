@@ -1,6 +1,6 @@
 # Studiewijzer
 
-De inhoud van deze studiewijzer geldt zowel voor de **reguliere studenten** als de studenten **afstandsleren (TILE)**. Waar nodig wordt duidelijk onderscheid gemaakt tussen zaken die enkel voor één van deze twee groepen gelden. Wat betreft praktische afspraken, regelingen, verwachtingen, enz. in verband met deze cursus zijn dit de enige geldige bronnen van informatie:
+De inhoud van deze studiewijzer geldt zowel voor de **reguliere studenten** als de studenten **afstandsleren (TILE)**. Waar nodig wordt duidelijk onderscheid gemaakt tussen zaken die enkel voor één van deze twee groepen gelden. Wat betreft praktische afspraken, regelingen, verwachtingen, enz. in verband met deze cursus zijn de enige geldige bronnen van informatie:
 
 - De studiefichefiche van dit opleidingsonderdeel, te bekijken via de Chamilo-
 cursus of <https://hogent.be/studiefiches/>;
@@ -19,7 +19,9 @@ De ervaring leert dat de onderlinge communicatie tussen studenten via Discord of
 
 Deze cursus biedt een inleiding in het vakgebied *Infrastructure Automation,* d.w.z. het geautomatiseerd opzetten en in productie brengen van reproduceerbare en schaalbare netwerkdiensten.
 
-Klassiek werden (en worden) servers stap voor stap handmatig geïnstalleerd en geconfigureerd. Hopelijk houdt de systeembeheerder daarbij een gedetailleerde procedurehandleiding bij zodat dit werk kan gereproduceerd worden, bijvoorbeeld als de servercapaciteit moet uitgebreid worden, als er moet gemigreerd worden naar een nieuwere versie van het besturingssysteem, enz. Wanneer je als systeembeheerder een serverpark van tientallen, honderden of zelfs duizenden machines (hetzij fysiek, hetzij virtueel) moet beheren, dan is het manueel opzetten, of zelfs scripten van de configuratie niet meer voldoende. In dit soort omgevingen wordt steevast gebruik gemaakt van Configuration Management Systems om de taaklast beheersbaar te houden. In deze cursus maken we gebruik van [Ansible](https://www.ansible.com), omdat dit een voor beginners toegankelijk systeem is dat qua filosofie en logica aansluit bij klassieke shell scripts. In het werkveld is de kans groot dat je ook met andere Configuration Management Systems in aanraking komt, bijvoorbeeld [Puppet](https://puppet.com/), [Chef](https://www.chef.io/).
+Klassiek werden (en worden) servers stap voor stap handmatig geïnstalleerd en geconfigureerd. Hopelijk houdt de systeembeheerder daarbij een gedetailleerde procedurehandleiding bij zodat dit werk kan gereproduceerd worden, bijvoorbeeld als de servercapaciteit moet uitgebreid worden, als er moet gemigreerd worden naar een nieuwere versie van het besturingssysteem, enz. Wanneer je als systeembeheerder een serverpark van tientallen, honderden of zelfs duizenden machines (hetzij fysiek, hetzij virtueel) moet beheren, dan is het manueel opzetten, of zelfs scripten van de configuratie niet meer voldoende. In dit soort omgevingen wordt steevast gebruik gemaakt van Configuration Management Systems om de taaklast beheersbaar te houden.
+
+In deze cursus maken we gebruik van het Configuration Management System [Ansible](https://www.ansible.com), omdat dit een voor beginners toegankelijk systeem is dat qua filosofie en logica aansluit bij klassieke shell scripts. In het werkveld is de kans groot dat je ook met andere Configuration Management Systems in aanraking komt, bijvoorbeeld [Puppet](https://puppet.com/) of [Chef](https://www.chef.io/).
 
 Andere termen die gebruikt worden in plaats van Infrastructure Automation:
 
@@ -91,7 +93,7 @@ We gebruiken een heleboel softwarepakketten in dit olod, maar die hoef je niet n
 
 Volgende software heb je wel nodig:
 
-- Een goede teksteditor, **Visual Studio Code** is aanbevolen, bij voorkeur met volgende plugins:
+- Een goede teksteditor. **Visual Studio Code** is aanbevolen, bij voorkeur met volgende plugins:
     - GitLens - Git supercharged (Eric Amodio)
     - Markdown All in One (Yu Zhang)
     - markdownlint (David Anson)
@@ -146,6 +148,8 @@ De lector zal elke wijziging in deze regeling via Chamilo aankondigen, maar je m
 
 **Studenten afstandsleren** verwerken de leerstof op eigen tempo, aan de hand van de aangeboden studiematerialen, en voeren de labo-opdrachten uit.
 
+Ze kunnen op de contactmomenten voor studenten afstandsleren een afspraak maken met de lector voor een individueel voortgangsgesprek en opvolging (zie Studiebegeleiding en planning).
+
 ## Werk- en leeraanwijzingen
 
 Het werken met labo-opdrachten vergt een zekere mate van zelfstandigheid van jou als student, maar dat is precies ook een attitude die verwacht wordt van een systeembeheerder. Je neemt dus zelf initiatief om de nodige kennis te vergaren en zoekt naar oplossingen voor de problemen die je ongetwijfeld zal tegenkomen.
@@ -160,7 +164,7 @@ Help elkaar daarin: samenwerken en kennis delen wordt van harte aangemoedigd. De
 
 Studenten stellen hun vragen over de cursus bij voorkeur tijdens de voorziene contactmomenten. Buiten de contactmomenten kunnen studenten vragen stellen via Teams, meer bepaald het chat-kanaal van het Team voor dit vak. Op Chamilo vind je een link naar het juiste kanaal. Studenten worden aangemoedigd om daar ook vragen van anderen te beantwoorden.
 
-De lector rechtstreeks contacteren via Teams chat of e-mail doe je enkel als je een persoonlijke vraag hebt. Alle vragen over de leerstof gaan via het Teams-kanaal, zoals hierboven beschreven, zodat we jullie vragen hoogstens één keer moeten beantwoorden en iedereen meteen het antwoord kan zien.
+De lector rechtstreeks contacteren via e-mail of Teams chatdoe je enkel als je een persoonlijke vraag hebt. Alle vragen over de leerstof gaan via het Teams-kanaal, zoals hierboven beschreven, zodat we jullie vragen hoogstens één keer moeten beantwoorden en iedereen meteen het antwoord kan zien.
 
 ### Studiebegeleiding Afstandsleren (TILE)
 
@@ -183,7 +187,7 @@ Volgende weekplanning is enkel bij benadering! Wanneer er lessen wegvallen, bijv
 - Er zijn twee **gequoteerde troubleshooting-labo's** gepland met (voor reguliere studenten) verplichte aanwezigheid.
     - Bij ziekte volg je de normale procedure voor het wettigen van je afwezigheid. Contacteer ook zo snel mogelijk je lector voor een inhaalopdracht.
     - Bij het begin van een troubleshooting-opdracht krijg je een opstelling voorgeschoteld (typisch een virtuele machine) met configuratiefouten. Het is jouw taak die zo snel mogelijk systematisch op te sporen en op te lossen **volgens de methode die je aangeleerd krijgt.** Over dit proces en je resultaten schrijf je een laboverslag dat je indient op Chamilo.
-    - **Studenten afstandsleren** kunnen met de lector tijdens die week een moment afspreken waarop je tijd hebt om hier aan te werken. Op het afgesproken tijdstip krijg je een downloadlink naar de opgave en dien je vóór de afgesproken deadline (in principe 4 uur na ontvangst van de opgave) je verslag in op Chamilo.
+    - **Studenten afstandsleren** kunnen de troubleshooting-labo's thuis uitvoeren. Spreek met de lector in de loop van de voorziene weken een moment af waarop je tijd hebt om hier aan te werken. Op het afgesproken tijdstip krijg je een downloadlink naar de opgave en dien je vóór de afgesproken deadline (in principe 4 uur na ontvangst van de opgave) je verslag in op Chamilo.
 
 | Lesweek | Onderwerp                                      |
 | :-----: | :--------------------------------------------- |
@@ -218,7 +222,7 @@ De toekenning van het examencijfer gebeurt op basis van “rubrics” die beschr
 
 In een tabel worden een aantal criteria opgesomd, waar je aan moet voldoen. Je kan “voldoen” op verschillende niveaus, meer bepaald “bekwaam”, “gevorderd”, “deskundig”, of in het slechtste geval “nog niet bekwaam”. In de evaluatiekaart wordt beschreven wat je precies moet doen om elk niveau te behalen.
 
-Om te slagen voor dit vak moet je aantonen dat je voor alle technische criteria minstens “bekwaam” bent. Met andere woorden, als je voor slechts één criterium “nog niet bekwaam” bevonden wordt, kan je niet slagen, hoe goed je ook de andere modules hebt afgewerkt. De niet-technische criteria (bv. rapportering) kunnen het examencijfer afhankelijk van het behaalde niveau nog positief of negatief beïnvloeden.
+Om te slagen voor dit vak moet je aantonen dat je voor alle technische criteria minstens “bekwaam” bent. Met andere woorden, zelfs als je voor slechts één criterium “nog niet bekwaam” bevonden wordt, kan je niet slagen, hoe goed je ook de andere modules hebt afgewerkt. De niet-technische criteria (bv. rapportering) kunnen het examencijfer afhankelijk van het behaalde niveau nog positief of negatief beïnvloeden (en eventueel zelfs nog onder 10/20 doen zakken!).
 
 **Merk op** dat je zowel een werkend product moet opleveren (= broncode) als de verslagen indienen én demo’s geven. Als één van de deliverables ontbreekt, wordt de opdracht beschouwd als niet gerealiseerd.
 
@@ -230,7 +234,7 @@ Studenten moeten *minstens drie keer* tijdens het semester deelresulaten oplever
 
 Reguliere studenten gaan tijdens de contactmomenten regelmatig langs bij de lector voor individuele opvolging en voor het opleveren van deelresultaten.
 
-Ook  als je weinig tot niets gerealiseerd hebt, kom je langs. Dat is immers een teken dat je ergens vast zit, en de lector kan je dan opnieuw op weg helpen.
+Ook als je weinig tot niets gerealiseerd hebt, kom je langs. Dat is immers een teken dat je ergens vast zit, en de lector kan je dan opnieuw op weg helpen.
 
 ### Specifieke afspraken afstandsleren
 

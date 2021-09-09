@@ -273,6 +273,19 @@ Het nadeel van dit commando is dat je er enkel de in `/etc/resolv.conf` gespecif
 
 Wanneer de DNS-server niet gespecifieerd is, of niet antwoordt op queries, kan je dezelfde zaken controleren als bij de default gateway.
 
+### Routering buiten het LAN
+
+Als binnen het lokale netwerk routering en DNS in orde zijn, kan je proberen om te pingen naar een host buiten het LAN. Begin met een host die zich nog relatief kort bij bevindt, en eventueel op IP-adres in plaats van op hostnaam.
+
+Een andere nuttige test is:
+
+```console
+$ curl icanhazip.com
+
+```
+
+Curl is een command-line tool om te interageren met een webserver. De website <https://icanhazip.com> was oorspronkelijk een hobbyproject van systeembeheerder [Major Hayden](https://major.io/) en wordt nu [onderhouden door Cloudflare](https://major.io/2021/06/06/a-new-future-for-icanhazip/). De website is heel eenvoudig en bevat zelfs geen HTML, maar toont enkel het publieke IP-adres van waar jij de pagina hebt opgevraagd. Op die manier controleer je ook of je Internettoegang hebt, of web-verkeer doorgelaten wordt en wat het publieke IP-adres is van het netwerk waar je je bevindt.
+
 ## Transportlaag
 
 In de transportlaag controleren we volgende zaken:

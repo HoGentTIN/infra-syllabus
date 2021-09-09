@@ -7,6 +7,31 @@ TODO:
 - Belang van automatisering
 - Casus: OVF brand
 
+## Automatisering van de levenscyclus van een serversysteem
+
+TODO:
+
+- Provisioning: van een lege machine (bare metal of VM) naar minimale installatie van een OS + voorzieningen om het systeem te beheren (Just Enough Operating System, JEOS)
+    - Tools: Packer, Docker
+    - Artefacten: Vagrant base box, VM image (bv. .ova)
+- Configuration Management: van JEOS naar volledig geconfigureerd systeem, klaar om in productie te gaan
+    - Tools: Ansible, Puppet, Chef, CFEngine, SaltStack, ...
+    - Artefacten: Playbook (Ansible), Manifest (Puppet), Cookbook (Chef), ...
+- Software delivery, Release Engineering
+    - Tools:
+        - CI/CD pipelines: Jenkins, Travis CI, Circle CI, Gitlab CI, Github Actions
+        - Packaging: rpmbuild, dpkg-deb, fpm
+        - Package management: RPM, deb, npm (JavaScript), RubyGems, pip (Python), Helm (Kubernetes), Chocolatey/NuGet (Windows/.Net), ...
+        - Repository management: Pulp
+- Orchestration: geautomatiseerd beheer van systemen in productie (bv. rolling updates, blue/green deployment, ...)
+    - Tools: Ansible, SaltStack, Kubernetes
+- Monitoring: systemen in productie in de gaten houden, waarschuwen bij problemen, opsporen van oorzaken
+    - Tools:
+        - Traditionele monitoring-systemen: Icinga, Nagios & forks, ...
+        - Time Series Databases: Prometheus, collectd, Cacti, ...
+        - Logging: Elastic stack (ElasticSearch, LogStash, Kibana), Splunk, Fluentd, syslog-ng, PagerDuty, ...
+
+
 ## Opzetten werkomgeving
 
 Installeer eerst de nodige software, meer bepaald de laatste stabiele versie bij aanvang van het semester. De volledige neerslag van al wat je voor deze cursus doet wordt bijgehouden in het versiebeheersysteem [Git](https://git-scm.com/). Via Chamilo vind je een link die, als je er op doorklikt, een nieuwe repository creëert waar je in kan werken. Deze is zichtbaar voor jou en de lector. Naast de configuratie van de opgezette systemen zal je er ook je documentatie bijhouden, zoals testrapporten, procedures, cheat sheets en checklists.
@@ -17,7 +42,7 @@ Richtlijnen voor het opstarten van je Git project:
 2. Zorg dat je een SSH-sleutelpaar hebt aangemaakt. Op die manier kan je het pushen naar Github vereenvoudigen. Het is dan meer bepaald niet meer nodig een gebruikersnaam en wachtwoord op te geven. Voer in een Bash-terminal het commando `ssh-keygen` uit, en volg de richtlijnen die het geeft. Geef voor je gemak een lege passphrase op (zoniet moet je telkens je de sleutel gebruikt je passphrase intikken). Normaal zou er in de directory `~/.ssh` (`~` staat voor je home-directory: op Windows `C:\Gebruikers\Gebruikersnaam`, op MacOS `/Users/Gebruikersnaam`, op Windows `/home/gebruikersnaam`) twee bestanden aangemaakt moeten zijn: `id_rsa` en `id_rsa.pub`. Het eerste is je private sleutel (die je geheim moet houden), het tweede de publieke. Die laatste kan je op Github registreren via je profielinstellingen (klik op je avatar rechtsboven, volg *Settings* en dan *SSH and GPG keys*).
 3. Controleer je Git basisconfiguratie (in `~/.gitconfig`) en als je dit nog niet gedaan hebt, maak je volgende aanpassingen:
 
-    ```
+    ```console
     git config --global user.name ”VOORNAAM NAAM”
     git config --global user.email ”VOORNAAM.NAAM@student.hogent.be”
     git config --global push.default simple
@@ -28,7 +53,7 @@ Richtlijnen voor het opstarten van je Git project:
 4. Maak lokaal een directory aan die je voorbehoudt voor al wat met deze cursus te maken heeft. Binnen deze directory kan je je Github-repository klonen. Klik op de Github-pagina van je repository op de groene knop rechts (Code), kies voor “SSH” kopieer de link van de vorm git@github.com:HoGentTIN/REPO_
 NAAM-GEBRUIKERSNAAM.git.
 
-    ```
+    ```console
     cd Documents/Courses/EnterpriseLinux/
     git clone git@github.com:HoGentTIN/REPONAAM-GEBRUIKERSNAAM.git
     ```
@@ -36,7 +61,7 @@ NAAM-GEBRUIKERSNAAM.git.
     Dit maakt een lokale kopie van de repository in een subdirectory. Je mag de naam van deze directory aanpassen en die verplaatsen, alles blijft gewoon werken.
 5. Creëer een nieuwe branch met de naam `solution` om je eigen code en documentatie bij te houden. Verderop wordt duidelijk waarom dit belangrijk is.
 
-    ```
+    ```console
     git switch -c solution
     ```
 
@@ -48,13 +73,13 @@ Wanneer er errata in de opgave gepubliceerd worden, kan je die relatief eenvoudi
 
 1. Eerst moet je zorgen dat je updates kan binnenhalen van de repository met de opdracht. Het volgende commando zorgt dat je kan synchroniseren met die repository. Dit moet slechts één keer gebeuren.
 
-    ```
+    ```console
     git remote add upstream https://github.com/HoGentTIN/infra-labs.git
     ```
 
 2. Wanneer er nieuwe commits gebeurd zijn in de opgave, kan je de wijzigingen telkens zo ophalen:
 
-        ```
+        ```console
         git switch main
         git pull upstream main
         git switch solution
@@ -168,7 +193,6 @@ alias infra='cd /home/bert/Documents/Courses/InfraAutomation/21-22'
 
 Nog meer voorbeelden vind je in <https://github.com/bertvv/dotfiles/blob/master/.bash.d/aliases.sh>.
 
-
 Voor meer complexere shortcuts is `alias` minder geschikt, maar daarvoor kan je in `.bashrc` een functie definiëren, bv.
 
 ```bash
@@ -205,13 +229,9 @@ Na opstarten kan je inloggen met `vagrant ssh srv001`. Je bent ingelogd als gebr
 
 Als je `ls /` uitvoert, zal je merken dat er een directory `/vagrant` bestaat. Dit is je lokale repository op je fysieke systeem die gemount is binnen de VM. Dit is een eenvoudige manier om bestanden te delen tussen VM en het fysieke systeem.
 
-Let er op dat je VMs niet meer vanuit je VirtualBox GUI opstart of bewerkt. Doe dit
-nu enkel met Vagrant en vanuit een terminal. Het commando `vagrant` moet altijd
-uitgevoerd worden vanuit de directory waar het bestand `Vagrantfile` zich bevindt.
+Let er op dat je VMs niet meer vanuit je VirtualBox GUI opstart of bewerkt. Doe dit nu enkel met Vagrant en vanuit een terminal. Het commando `vagrant` moet altijd uitgevoerd worden vanuit de directory waar het bestand `Vagrantfile` zich bevindt.
 
-De belangrijkste Vagrant commando’s worden opgesomd in de tabel hieronder. Daar waar
-`[VM]` tussen rechte haken staat, is dat een optioneel argument. Als je het weglaat,
-wordt de actie op alle VMs tegelijk uitgevoerd.
+De belangrijkste Vagrant commando’s worden opgesomd in de tabel hieronder. Daar waar `[VM]` tussen rechte haken staat, is dat een optioneel argument. Als je het weglaat, wordt de actie op alle VMs tegelijk uitgevoerd.
 
 | Commando                 | Functie                                    |
 | :----------------------- | :----------------------------------------- |
@@ -229,11 +249,11 @@ wordt de actie op alle VMs tegelijk uitgevoerd.
 
 Je labo-verslagen en documentatie moeten ook in Markdown geschreven worden. Dit heeft een aantal voordelen: omdat Markdown tekstgebaseerd is, kan het in een versiebeheersysteem opgeslagen worden. Met Word-documenten gaat dit niet (Git is niet geschikt om wijzigingen in binaire bestanden te traceren). Een verzameling tekstbestanden is ook makkelijker te doorzoeken dan een verzameling Word-documenten, bijvoorbeeld met een tool als [The Silver Searcher](https://geoff.greer.fm/ag/).
 
-**Leer tekst correct opmaken met Markdown.** [Dit is heel eenvoudig te leren](https://www.markdownguide.org/) en kost nauwelijks inspanning. Maar als je je niet houdt aan enkele basisregels, wordt je tekst niet correct omgezet naar HTML met een moeilijk leesbaar verslag als gevolg.
+**Leer tekst correct opmaken met Markdown.** [Dit is heel eenvoudig te leren](https://www.markdownguide.org/) en kost weinig inspanning. Maar als je je niet houdt aan enkele basisregels, wordt je tekst niet correct omgezet naar HTML met een moeilijk leesbaar verslag als gevolg.
 
 Goede teksteditors bieden ondersteuning voor Markdown en kunnen je een preview laten zien van hoe het bestand er in HTML zou uitzien. Er bestaan VSCode plugins die de basis-ondersteuning uitbreidt met enkele features die je productiviteit verhogen. Markdown All in One (door Yu Zhang) en markdownlint (door David Anson) zijn de interessantste:
 
-- Shortcut `Ctrl+Shift+V` toont een preview van het bestand in HTML
+- Shortcut `Ctrl+Shift+V` toont een preview van het bestand met opmaak
 - Shortcut `Alt+Shift+F` (Linux: `Ctrl+Shift+I`) formatteert tabellen zodat de verticale lijnen altijd mooi uitgelijnd zijn.
 - Opmaak van wiskundige formules in LaTeX-notatie
 - Markdownlint toont fouten in je Markdown-code aan de hand van een gekleurde golvende lijnt onder de tekst (zoals een spell-checker) en vat ze onderaan in het "Problems"-paneel samen in een lijst.
