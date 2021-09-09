@@ -5,13 +5,15 @@ In deze repository vind je de syllabus voor de cursus Infrastructure Automation 
 Gerelateerde repositories:
 
 - Syllabus: <https://github.com/HoGentTIN/infra-syllabus>
+    - Te bekijken op: <https://hogenttin.github.io/infra-syllabus/>
 - Slides van de lessen: <https://github.com/HoGentTIN/infra-slides>
+    - Te bekijken op: <https://hogenttin.github.io/infra-slides/>
 - Vagrant demo-omgeving: <https://github.com/HoGentTIN/infra-demo>
 - Opgave labo-opdrachten: <https://github.com/HoGentTIN/infra-labs>
 
 ## De syllabus lokaal genereren
 
-De syllabus is opgemaakt in Markdown en omgezet in een website met mkdocs.
+De syllabus is opgemaakt in [Markdown](https://guides.github.com/features/mastering-markdown/) en omgezet in een website met [mkdocs](https://www.mkdocs.org/).
 
 Om de syllabus zelf lokaal te genereren en te bekijken:
 
@@ -23,7 +25,7 @@ mkdocs serve
 Publiceren op Github (kan enkel als je push-rechten hebt of in je eigen kloon van deze repo):
 
 ```console
-mkdocs gh-deploy --site-dir ../gh-pages/
+mkdocs gh-deploy
 ```
 
 ## Bijdragen
