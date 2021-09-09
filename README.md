@@ -1,12 +1,30 @@
 # Syllabus Infrastructure Automation
 
-In deze repository vind je het lesmateriaal voor de cursus Infrastructure Automation (3e jaar bachelor toegepaste informatica aan Hogeschool Gent):
+In deze repository vind je de syllabus voor de cursus Infrastructure Automation (3e jaar bachelor toegepaste informatica aan Hogeschool Gent).
 
-- Syllabus (in [mkdocs](https://www.mkdocs.org/))
-- Slides van de lessen (TODO)
-- Vagrant testomgeving die hoort bij de lesonderwerpen (TODO)
+Gerelateerde repositories:
 
-De opgave van de bijhorende labo-opdrachten vind je in een aparte repository, <https://github.com/HoGentTIN/infra-labs>.
+- Syllabus: <https://github.com/HoGentTIN/infra-syllabus>
+- Slides van de lessen: <https://github.com/HoGentTIN/infra-slides>
+- Vagrant demo-omgeving: <https://github.com/HoGentTIN/infra-demo>
+- Opgave labo-opdrachten: <https://github.com/HoGentTIN/infra-labs>
+
+## De syllabus lokaal genereren
+
+De syllabus is opgemaakt in Markdown en omgezet in een website met mkdocs.
+
+Om de syllabus zelf lokaal te genereren en te bekijken:
+
+```console
+mkdocs build
+mkdocs serve
+```
+
+Publiceren op Github (kan enkel als je push-rechten hebt of in je eigen kloon van deze repo):
+
+```console
+mkdocs gh-deploy --site-dir ../gh-pages/
+```
 
 ## Bijdragen
 
@@ -14,4 +32,4 @@ Bijdragen aan het hier gepubliceerde lesmateriaal zijn van harte welkom! verbete
 
 ## Licentie-informatie
 
-Deze syllabus is samengesteld door [Bert Van Vreckem](https://github.com/bertvv/). De tekst van de syllabus en de slides vallen onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/).
+Deze syllabus is samengesteld door [Bert Van Vreckem](https://github.com/bertvv/) en valt onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/).
