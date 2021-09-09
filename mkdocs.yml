@@ -1,5 +1,7 @@
 site_name: "Infrastructure Automation: Syllabus"
-site_url: https://example.com/
+site_url: https://hogenttin.github.io/infra-syllabus/
+repo_url: https://github.com/HoGentTIN/infra-syllabus/
+edit_uri: edit/main/docs/
 nav:
   - Studiewijzer: index.md
   - Intro: intro.md
