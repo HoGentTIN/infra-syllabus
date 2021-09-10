@@ -33,6 +33,8 @@ Andere termen die gebruikt worden in plaats van Infrastructure Automation:
 
 De kennis en vaardigheden die je in *Infrastructure Automation* opdoet, kan je ook toepassen in *DevOps project: Operations*.
 
+![Infrastructure Automation binnen het curriculum](img/infra-plaats-curriculum.png)
+
 ## Leerdoelen en competenties
 
 - Kan het opzetten van netwerkservices automatiseren met een configuration management system
@@ -43,7 +45,7 @@ De kennis en vaardigheden die je in *Infrastructure Automation* opdoet, kan je o
 
 ## Leerinhoud
 
-**Opmerking** In academiejaar 2021-2022 hebben studenten die dit olod volgen het olod *Linux*, dat als begincompetentie geldt, nog niet gekregen. De leerstof uit dat vak die nog niet is aan bod gekomen wordt dit academiejaar dan ook opgenomen in *Infrastructure Automation*. In de opsomming hieronder is aangegeven waarover het precies gaat.
+**Opmerking** In academiejaar 2021-2022 hebben studenten die dit olod volgen het olod *Linux*, dat als begincompetentie geldt, nog niet gekregen. Dit academiejaar wordt dan ook een overgangsjaar waar de belangrijkste onderwerpen die in *Linux* gegeven zullen worden toch in dit vak aan bod zullen komen.
 
 - Inleiding, opzetten werkomgeving
 - Module 1: containervirtualisatie
@@ -56,17 +58,17 @@ De kennis en vaardigheden die je in *Infrastructure Automation* opdoet, kan je o
 - Module 4: configuration management
     - LAMP-stack geautomatiseerd opzetten met Ansible
     - Minimaal functioneel netwerk opzetten: router, DNS, DHCP **(overgangsjaar)**
-- Module 5: monitoring en logging
-    - Tools voor monitoring gebruiken: Prometheus
-    - Systeem- en applicatielogs bijhouden: ElasticSearch, Fluentd, Kibana
 
 ## Leermateriaal
 
 Het leermateriaal voor deze cursus bestaat uit:
 
-- Deze syllabus (via Chamilo)
-- Opgaven van de labo-opdrachten (via Github)
-- Demo-video's, enz. (via Chamilo)
+- De informatie op Chamilo
+- Online cursusmateriaal:
+    - [Deze syllabus](https://hogenttin.github.io/infra-syllabus/) met studiewijzer
+    - [De slides bij de les](https://hogenttin.github.io/infra-slides/)
+    - [Vagrant demo-omgeving](https://github.com/HoGentTIN/infra-demo)
+    - [Opgave van de labo-oefeningen](https://github.com/HoGentTIN/infra-labs)
 - Handleidingen van de gebruikte software (online te raadplegen):
     - Ansible: <https://docs.ansible.com/>
     - cAdvisor: <https://github.com/google/cadvisor>
@@ -79,17 +81,17 @@ Het leermateriaal voor deze cursus bestaat uit:
 
 ### Aanbevolen boeken
 
-Er is geen verplicht handboek, maar verderop geven we wel enkele aanbevolen titels op voor de geïnteresseerde student. De cursus kan perfect gevolgd worden zonder toegang te hebben tot deze boeken, maar kunnen wel interessant zijn om de achtergrondkennis en inzichten in de leerstof te verhogen.
+Er is geen verplicht handboek, maar verderop geven we wel enkele aanbevolen titels op voor de geïnteresseerde student. De cursus kan perfect gevolgd worden zonder toegang te hebben tot deze boeken, maar kunnen wel interessant zijn om de achtergrondkennis en inzichten in de leerstof te verhogen, of als naslagwerk wanneer je deze tools voor je job nodig hebt.
 
 - Geerling, J. (2020) *Ansible for DevOps: Server and configuration management for humans.* LeanPub. <https://leanpub.com/ansible-for-devops>
 - McKendrick, R. & Gallagher, S (2020) *Mastering Docker.* 4th Edition. Packt Publishing. <https://www.packtpub.com/product/mastering-docker-fourth-edition/9781839216572>
 - Sesto, V. (2021) *Practical Ansible: Configuration Management from Start to Finish.* Apress. <https://link.springer.com/book/10.1007%2F978-1-4842-6485-0>
 
-**Opmerking:** In deze lijst staan enkele boeken met een verwijzing naar Springer Link. Deze kan je dankzij een abonnement van de HOGENT-bib gratis downloaden als PDF of Epub. Het volstaat om de link aan te klikken vanop de hogeschoolcampus of na het aanzetten van VPN. Er is verder geen authenticatie nodig, je kan het e-boek meteen downloaden.
+**Opmerking:** In deze lijst staat een boek met een verwijzing naar Springer Link. Deze kan je dankzij een abonnement van de HOGENT-bib *gratis downloaden* als PDF of Epub. Het volstaat om de link aan te klikken vanop de hogeschoolcampus of na het aanzetten van VPN. Er is verder geen authenticatie nodig, je kan het e-boek meteen downloaden.
 
 ### Software
 
-We gebruiken een heleboel softwarepakketten in dit olod, maar die hoef je niet noodzakelijk allemaal meteen te installeren. Het grootste deel van de installaties gebeurt binnen een virtuele machine.
+We gebruiken een heleboel softwarepakketten in dit olod, maar die hoef je niet noodzakelijk allemaal meteen te installeren. Het grootste deel van de installaties gebeurt immers binnen een (reproduceerbare) virtuele machine.
 
 Volgende software heb je wel nodig:
 
@@ -148,7 +150,7 @@ De lector zal elke wijziging in deze regeling via Chamilo aankondigen, maar je m
 
 **Studenten afstandsleren** verwerken de leerstof op eigen tempo, aan de hand van de aangeboden studiematerialen, en voeren de labo-opdrachten uit.
 
-Ze kunnen op de contactmomenten voor studenten afstandsleren een afspraak maken met de lector voor een individueel voortgangsgesprek en opvolging (zie Studiebegeleiding en planning).
+Ze kunnen op de contactmomenten voor studenten afstandsleren een afspraak maken met de lector voor een individueel voortgangsgesprek en opvolging (zie [Studiebegeleiding en planning](#studiebegeleiding-en-planning)).
 
 ## Werk- en leeraanwijzingen
 
@@ -156,7 +158,7 @@ Het werken met labo-opdrachten vergt een zekere mate van zelfstandigheid van jou
 
 Help elkaar daarin: samenwerken en kennis delen wordt van harte aangemoedigd. De lector is uiteraard beschikbaar om je bij te staan als je vast komt te zitten en kan je tips geven of verwijzen naar geschikte aanvullende studiematerialen.
 
-**Reguliere studenten** moeten minstens eens in de drie weken persoonlijk bij de lector langs komen om deelresultaten te tonen. Kom zeker langs als je ergens vast zit, zodat de lector je terug op weg kan helpen!
+**Reguliere studenten** moeten in de loop van het semester minstens drie keer persoonlijk bij de lector langs komen om deelresultaten te tonen. Kom zeker langs als je ergens vast zit, zodat de lector je terug op weg kan helpen!
 
 ## Studiebegeleiding en planning
 
@@ -164,7 +166,7 @@ Help elkaar daarin: samenwerken en kennis delen wordt van harte aangemoedigd. De
 
 Studenten stellen hun vragen over de cursus bij voorkeur tijdens de voorziene contactmomenten. Buiten de contactmomenten kunnen studenten vragen stellen via Teams, meer bepaald het chat-kanaal van het Team voor dit vak. Op Chamilo vind je een link naar het juiste kanaal. Studenten worden aangemoedigd om daar ook vragen van anderen te beantwoorden.
 
-De lector rechtstreeks contacteren via e-mail of Teams chatdoe je enkel als je een persoonlijke vraag hebt. Alle vragen over de leerstof gaan via het Teams-kanaal, zoals hierboven beschreven, zodat we jullie vragen hoogstens één keer moeten beantwoorden en iedereen meteen het antwoord kan zien.
+De lector rechtstreeks contacteren via e-mail of Teams chat doe je enkel als je een persoonlijke vraag hebt. Alle vragen over de leerstof gaan via het Teams-kanaal, zoals hierboven beschreven, zodat we jullie vragen hoogstens één keer moeten beantwoorden en iedereen meteen het antwoord kan zien.
 
 ### Studiebegeleiding Afstandsleren (TILE)
 
@@ -198,10 +200,10 @@ Volgende weekplanning is enkel bij benadering! Wanneer er lessen wegvallen, bijv
 |    3    | M2. Continuous Integration/Delivery            |
 |    4    | M3. Bottom-up Troubleshooting                  |
 |    5    | Troubleshooting-labo 1                         |
-|    6    | M4. Configuration Management                   |
-|    7    |                                                |
+|    6    |                                                |
+|    7    | M4. Configuration Management                   |
 |    8    |                                                |
-|    9    | M5. Monitoring en logging                      |
+|    9    |                                                |
 |   10    |                                                |
 |   11    |                                                |
 |   12    | Troubleshooting-labo 2                         |

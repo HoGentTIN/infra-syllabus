@@ -34,4 +34,4 @@ Bijdragen aan het hier gepubliceerde lesmateriaal zijn van harte welkom! verbete
 
 ## Licentie-informatie
 
-Deze syllabus is samengesteld door [Bert Van Vreckem](https://github.com/bertvv/) en valt onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/).
+Deze slides zijn samengesteld door [Bert Van Vreckem](https://github.com/bertvv/) en vallen onder de [Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie](http://creativecommons.org/licenses/by-sa/4.0/).
