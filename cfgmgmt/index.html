@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://hogenttin.github.io/infra-syllabus/cfgmgmt/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>ConfigMgmt - Infrastructure Automation: Syllabus</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Infrastructure Automation: Syllabus</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Studiewijzer</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../intro/" class="nav-link">Intro</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../containers/" class="nav-link">Containers</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ci-cd/" class="nav-link">CICD</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../troubleshooting/" class="nav-link">Troubleshooting</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">ConfigMgmt</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../troubleshooting/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/HoGentTIN/infra-syllabus/edit/main/docs/cfgmgmt.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#configuration-management" class="nav-link">Configuration Management</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#leerdoelen" class="nav-link">Leerdoelen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#inleiding" class="nav-link">Inleiding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#structuur-van-een-ansible-playbook" class="nav-link">Structuur van een Ansible playbook</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="configuration-management">Configuration Management</h1>
+<h2 id="leerdoelen">Leerdoelen</h2>
+<ul>
+<li>Het concept van een configuration management system begrijpen<ul>
+<li>De belangrijkste eigenschappen van een configuration management system, nl. de declaratieve aard, idempotentie begrijpen</li>
+<li>De voordelen van een configuration management system t.o.v. klassieke scripts begrijpen</li>
+</ul>
+</li>
+<li>Ansible kunnen gebruiken om een netwerkservice op te zetten<ul>
+<li>Basisconcepten van Ansible begrijpen en kunnen toepassen: playbooks, variabelen, modules, rollen.</li>
+<li>Een playbooks kunnen schrijven</li>
+<li>Bestaande rollen gebruiken en rolvariabelen aanpassen voor de specifieke situatie</li>
+</ul>
+</li>
+</ul>
+<h2 id="inleiding">Inleiding</h2>
+<p>Een <em>configuration management system</em> stelt een systeembeheerder in staat om de gewenste toestand van een systeem te gedetailleerd te beschrijven en aan de hand daarvan dat systeem naar die toestand te brengen. Dit impliceert dat deze beschrijving <strong>declaratief</strong> is, d.w.z. dat je de eindtoestand beschrijft, niet de stappen of commando's die nodig zijn om die toestand te bereiken. Als je bijvoorbeeld in <a href="https://www.ansible.com">Ansible</a> (het configuration management system dat we in deze cursus gebruiken) wil specifiëren dat de SSH-server moet draaien, schrijf je:</p>
+<pre><code class="language-yaml">- name: Ensure the SSH daemon is running
+  service:
+    name: sshd
+    state: started
+</code></pre>
+<p>Ansible voert op de achtergrond de juiste commando's uit, afhankelijk van de Linux-distributie die op de machine draait (<code>systemctl start sshd</code> op moderne Systemd-gebaseerde distro's, <code>service sshd start</code> op bepaalde oudere systemen, enz.).</p>
+<p>Een andere eigenschap van een configuration management system is <strong>idempotentie</strong>. Dat betekent dat na het succesvol uitvoeren het systeem gegarandeerd in één iteratie naar de gewenste eindtoestand gebracht is. Als het proces met succes afgesloten wordt, moet je dus achteraf niet controleren of de SSH-daemon effectief draait. Als het configuration management system er om de ene of de andere reden niet in slaagt om de SSH-server op te starten (bv. door een fout in het configuratiebestand), dan stopt het proces meteen met het uitvoeren en toont een foutboodschap. Een config management system zal ook enkel die wijzigingen doorvoeren die nodig zijn. Wanneer je de code dus een tweede keer uitvoert, zal er niets meer gewijzigd worden (want we weten dat het systeem zich al in de gewenste toestand bevindt).</p>
+<p>Sommige config management systemen hebben een eigen taal ontwikkeld om de gewenste toestand in te beschrijven (bv. Puppet), andere gebruiken een bestaande taal (bv. Chef, configuratie in Ruby). Bij Ansible beschrijf je de configuratie van een systeem met YAML (een variant van JSON), een eenvoudig tekstformaat om data te structureren op een manier die makkelijk te interpreteren is zowel door mensen als computers. De bestanden die deze configuratiecode bevatten worden <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html">playbooks</a> genoemd. Als je deze playbooks op een specifieke manier structureert en herbruik baar maakt, spreekt men van een <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html">rol</a>. Je kan rollen toekennen aan een host, en specifieke instellingen voor die host aanpassen door het invullen van <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html">variabelen</a>. Op <a href="https://galaxy.ansible.com/">Ansible Galaxy</a> kan je honderden rollen vinden die door hun auteurs gepubliceerd zijn.</p>
+<h2 id="structuur-van-een-ansible-playbook">Structuur van een Ansible playbook</h2>
+<p>De directorystructuur van een Ansible-project ligt vast en wordt <a href="https://docs.ansible.com/ansible/latest/user_guide/sample_setup.html">uitvoerig beschreven in de documentatie</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

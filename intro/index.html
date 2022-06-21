@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://hogenttin.github.io/infra-syllabus/intro/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Intro - Infrastructure Automation: Syllabus</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Infrastructure Automation: Syllabus</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Studiewijzer</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Intro</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../containers/" class="nav-link">Containers</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ci-cd/" class="nav-link">CICD</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../troubleshooting/" class="nav-link">Troubleshooting</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../cfgmgmt/" class="nav-link">ConfigMgmt</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../containers/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/HoGentTIN/infra-syllabus/edit/main/docs/intro.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#inleiding-opzetten-werkomgeving" class="nav-link">Inleiding, opzetten werkomgeving</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#motivatie" class="nav-link">Motivatie</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#automatisering-van-de-levenscyclus-van-een-serversysteem" class="nav-link">Automatisering van de levenscyclus van een serversysteem</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#opzetten-werkomgeving" class="nav-link">Opzetten werkomgeving</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tips-voor-efficient-werken" class="nav-link">Tips voor efficiënt werken</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#vagrant" class="nav-link">Vagrant</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#markdown" class="nav-link">Markdown</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="inleiding-opzetten-werkomgeving">Inleiding, opzetten werkomgeving</h1>
+<h2 id="motivatie">Motivatie</h2>
+<p>TODO:</p>
+<ul>
+<li>Belang van automatisering</li>
+<li>Casus: OVF brand</li>
+</ul>
+<h2 id="automatisering-van-de-levenscyclus-van-een-serversysteem">Automatisering van de levenscyclus van een serversysteem</h2>
+<p>TODO:</p>
+<ul>
+<li>Provisioning: van een lege machine (bare metal of VM) naar minimale installatie van een OS + voorzieningen om het systeem te beheren (Just Enough Operating System, JEOS)<ul>
+<li>Tools: Packer, Docker</li>
+<li>Artefacten: Vagrant base box, VM image (bv. .ova)</li>
+</ul>
+</li>
+<li>Configuration Management: van JEOS naar volledig geconfigureerd systeem, klaar om in productie te gaan<ul>
+<li>Tools: Ansible, Puppet, Chef, CFEngine, SaltStack, ...</li>
+<li>Artefacten: Playbook (Ansible), Manifest (Puppet), Cookbook (Chef), ...</li>
+</ul>
+</li>
+<li>Software delivery, Release Engineering<ul>
+<li>Tools:<ul>
+<li>CI/CD pipelines: Jenkins, Travis CI, Circle CI, Gitlab CI, Github Actions</li>
+<li>Packaging: rpmbuild, dpkg-deb, fpm</li>
+<li>Package management: RPM, deb, npm (JavaScript), RubyGems, pip (Python), Helm (Kubernetes), Chocolatey/NuGet (Windows/.Net), ...</li>
+<li>Repository management: Pulp</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Orchestration: geautomatiseerd beheer van systemen in productie (bv. rolling updates, blue/green deployment, ...)<ul>
+<li>Tools: Ansible, SaltStack, Kubernetes</li>
+</ul>
+</li>
+<li>Monitoring: systemen in productie in de gaten houden, waarschuwen bij problemen, opsporen van oorzaken<ul>
+<li>Tools:<ul>
+<li>Traditionele monitoring-systemen: Icinga, Nagios &amp; forks, ...</li>
+<li>Time Series Databases: Prometheus, collectd, Cacti, ...</li>
+<li>Logging: Elastic stack (ElasticSearch, LogStash, Kibana), Splunk, Fluentd, syslog-ng, PagerDuty, ...</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="opzetten-werkomgeving">Opzetten werkomgeving</h2>
+<p>Installeer eerst de nodige software, meer bepaald de laatste stabiele versie bij aanvang van het semester. De volledige neerslag van al wat je voor deze cursus doet wordt bijgehouden in het versiebeheersysteem <a href="https://git-scm.com/">Git</a>. Via Chamilo vind je een link die, als je er op doorklikt, een nieuwe repository creëert waar je in kan werken. Deze is zichtbaar voor jou en de lector. Naast de configuratie van de opgezette systemen zal je er ook je documentatie bijhouden, zoals testrapporten, procedures, cheat sheets en checklists.</p>
+<p>Richtlijnen voor het opstarten van je Git project:</p>
+<ol>
+<li>In principe moet je al een Github account hebben. Als je dit nog niet gedaan hebt, koppel dan zeker je @student.hogent.be adres aan het account. Je kan dan het <a href="https://education.github.com/pack">Github Student Developer Pack</a> aanvragen met allerlei interessante aanbiedingen. Het is mogelijk om meerdere e-mailadressen te registreren, en het is zinvol om ook je privé-adres te koppelen. Op die manier kan je je Github-account nog gebruiken na je afstuderen.</li>
+<li>Zorg dat je een SSH-sleutelpaar hebt aangemaakt. Op die manier kan je het pushen naar Github vereenvoudigen. Het is dan meer bepaald niet meer nodig een gebruikersnaam en wachtwoord op te geven. Voer in een Bash-terminal het commando <code>ssh-keygen</code> uit, en volg de richtlijnen die het geeft. Geef voor je gemak een lege passphrase op (zoniet moet je telkens je de sleutel gebruikt je passphrase intikken). Normaal zou er in de directory <code>~/.ssh</code> (<code>~</code> staat voor je home-directory: op Windows <code>C:\Gebruikers\Gebruikersnaam</code>, op MacOS <code>/Users/Gebruikersnaam</code>, op Windows <code>/home/gebruikersnaam</code>) twee bestanden aangemaakt moeten zijn: <code>id_rsa</code> en <code>id_rsa.pub</code>. Het eerste is je private sleutel (die je geheim moet houden), het tweede de publieke. Die laatste kan je op Github registreren via je profielinstellingen (klik op je avatar rechtsboven, volg <em>Settings</em> en dan <em>SSH and GPG keys</em>).</li>
+<li>
+<p>Controleer je Git basisconfiguratie (in <code>~/.gitconfig</code>) en als je dit nog niet gedaan hebt, maak je volgende aanpassingen:</p>
+<p><code>console
+git config --global user.name ”VOORNAAM NAAM”
+git config --global user.email ”VOORNAAM.NAAM@student.hogent.be”
+git config --global push.default simple
+git config --global core.autocrlf input
+git config --global pull.rebase true</code></p>
+</li>
+<li>
+<p>Maak lokaal een directory aan die je voorbehoudt voor al wat met deze cursus te maken heeft. Binnen deze directory kan je je Github-repository klonen. Klik op de Github-pagina van je repository op de groene knop rechts (Code), kies voor “SSH” kopieer de link van de vorm git@github.com:HoGentTIN/REPO_
+NAAM-GEBRUIKERSNAAM.git.</p>
+<p><code>console
+cd Documents/Courses/EnterpriseLinux/
+git clone git@github.com:HoGentTIN/REPONAAM-GEBRUIKERSNAAM.git</code></p>
+<p>Dit maakt een lokale kopie van de repository in een subdirectory. Je mag de naam van deze directory aanpassen en die verplaatsen, alles blijft gewoon werken.
+5. Creëer een nieuwe branch met de naam <code>solution</code> om je eigen code en documentatie bij te houden. Verderop wordt duidelijk waarom dit belangrijk is.</p>
+<p><code>console
+git switch -c solution</code></p>
+</li>
+<li>
+<p>Open de directory in Visual Studio Code en open het bestand <code>README.md</code>. Vul bovenaan de gevraagde gegevens in (naam, klasgroep, enz.) en commit deze wijziging. Lees het README-bestand voor verdere instructies.</p>
+</li>
+</ol>
+<h3 id="errata">Errata</h3>
+<p>Wanneer er errata in de opgave gepubliceerd worden, kan je die relatief eenvoudig binnen halen, maar enkel als je een eigen <code>solution</code>-branch aangemaakt hebt.</p>
+<ol>
+<li>
+<p>Eerst moet je zorgen dat je updates kan binnenhalen van de repository met de opdracht. Het volgende commando zorgt dat je kan synchroniseren met die repository. Dit moet slechts één keer gebeuren.</p>
+<p><code>console
+git remote add upstream https://github.com/HoGentTIN/infra-labs.git</code></p>
+</li>
+<li>
+<p>Wanneer er nieuwe commits gebeurd zijn in de opgave, kan je de wijzigingen telkens zo ophalen:</p>
+<pre><code>```console
+git switch main
+git pull upstream main
+git switch solution
+git rebase main
+```
+</code></pre>
+<ul>
+<li>De eerste twee regels zorgen er voor dat jouw versie van de main-branch up-to-date gebracht wordt met de nieuwe commits.</li>
+<li>In de derde regel ga je opnieuw naar je eigen branch. Voorlopig is er daar nog niets gewijzigd</li>
+<li>In de vierde regel, tenslotte, ga je de wijzigingen in de opgave op jouw eigen versie toepassen. Mogelijks komen er hier conflicten naar boven tussen bepaalde bestanden in de opgave en jouw wijzigingen. De command-line Git client geeft goede instructies om deze conflicten op te lossen. Zie hieronder voor een voorbeeld.</li>
+</ul>
+</li>
+</ol>
+<p>Deze procedure werkt niet als je geen branch voor je eigen oplossing gemaakt hebt.</p>
+<p>In dat geval haal je jezelf een hoop ellende op de hals... Als er conflicten optreden in bestanden, blijft Git in rebase-modus” steken en kan je voorlopig niet verder werken. Voer eerst git status uit om een lijst te krijgen met alle betrokken bestanden.</p>
+<pre><code class="language-console">$ git status
+rebase in progress; onto e5bd2df
+You are currently rebasing branch 'master' on 'e5bd2df'.
+    (fix conflicts and then run ”git rebase --continue”)
+    (use ”git rebase --skip” to skip this patch)
+    (use ”git rebase --abort” to check out the original branch)
+Unmerged paths:
+    (use ”git reset HEAD &lt;file&gt;...” to unstage)
+    (use ”git add &lt;file&gt;...” to mark resolution)
+both modified:
+
+ README.md
+
+no changes added to commit (use ”git add” and/or ”git commit -a”)
+</code></pre>
+<p>Open deze één voor één met je teksteditor en zoek naar de markeringen voor conflicten, bv.</p>
+<pre><code class="language-text">If you have questions, please
+&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+open an issue
+======
+ask your question in IRC.
+&gt;&gt;&gt;&gt;&gt;&gt; main
+</code></pre>
+<p>VSCode toont deze conflicten in een kleur zodat ze in het oog springen.</p>
+<p>Bewerk alle bestanden met conflicten en verbeter de code. Vervolgens voeg je alle aangepaste bestanden toe met <code>git add .</code> en kan je het rebase-proces verder zetten met <code>git rebase --continue</code>. Gebruik tussendoor regelmatig git status om te zien hoe ver je staat en welke commando’s je nodig hebt om een stap verder te gaan.</p>
+<h2 id="tips-voor-efficient-werken">Tips voor efficiënt werken</h2>
+<p>In deze sectie vind je enkele algemene richtlijnen die je helpen vlotter en efficiënter te werken.</p>
+<ul>
+<li>Voor je aan een labo-opdracht begint, bereid je je eerst voor door alle aangereikte studiematerialen te bestuderen: handleidingen, screencasts, ... “Van buiten blokken” is helemaal niet nodig, maar zorg er in elk geval voor dat je er in die mate vertrouwd bent, dat je snel gericht kan zoeken naar juiste, relevante informatie. Je vindt die via de bronvermeldingen in deze syllabus, of via de opgave.</li>
+<li>Open <strong>meerdere terminalvensters/consoles</strong> naast elkaar (TODO: figuur invoegen). Elke terminal krijgt zijn eigen functie, bijvoorbeeld:<ul>
+<li>Vim editor (of VS Code/Sublime/Notepad/...in een apart venster);</li>
+<li>doorvoeren van wijzigingen aan de configuratie;</li>
+<li>ingelogd op VM, voor commando’s;</li>
+<li>ingelogd op VM, voor tonen logbestanden.</li>
+</ul>
+</li>
+<li><strong>Werk stap voor stap.</strong> Schrijf niet teveel code ineens. Probeer eerst een minimaal werkende opstelling te verkrijgen en registreer meteen in Git. Maak minimale wijzigingen en test elke wijziging uit. Hoe groter en ingrijpender de wijzigingen, hoe meer kans op fouten en hoe moeilijker die te debuggen zijn. Zodra iets werkt, en je bent een stap verder, registreer je dit meteen in Git en geef je een duidelijke, beschrijvende commit-boodschap.</li>
+<li><strong>Gebruik Git op de command-line.</strong> Bij de meeste Git commando’s krijg je gedetailleerde uitleg over hoe je een stap verder moet gaan en ook hoe je de laatste stap kan ongedaan maken. Dit geeft op de duur een beter inzicht in hoe Git precies werkt dan je via een GUI kan krijgen. De meeste GUIs voor Git verbergen belangrijke details waardoor je niet goed kan begrijpen wat je aan het doen bent.</li>
+<li><strong>Commit regelmatig wijzigingen in je code</strong> en probeer <strong>elke commit te beperken tot één enkele “reden”</strong> om wijzigingen aan te brengen aan de bestaande code. Dit maakt de “geschiedenis” van je project transparanter en maakt ook dat je makkelijker kan terugkeren naar een bepaalde stap wanneer je de mist in gaat.</li>
+<li><strong>Maak backups</strong> van originele, ongewijzigde configuratiebestanden zodat je er op kan terugvallen als er iets misloopt. Soms heb je zodanig zitten “prutsen” dat je er niet meer in slaagt de service te laten werken.</li>
+<li><strong>Gebruik <code>vagrant destroy</code></strong>. Wanneer je veel manuele wijzigingen hebt aangebracht in een VM, ben je op de duur niet meer zeker dat die zich in de gewenste toestand bevindt. Of je kan door experimenteren de VM onbruikbaar gemaakt hebben. Door de VM te verwijderen en opnieuw op te bouwen (met <code>vagrant up</code>) kan je opnieuw beginnen van een werkende versie (als je de vorige richtlijnen opvolgt, tenminste!).</li>
+<li>Ook wanneer je denkt klaar te zijn met een deelopdracht, genereer de VM nog eens helemaal opnieuw en voer alle acceptatietests uit (indien die voorzien zijn in de labo-opdracht).</li>
+</ul>
+<h3 id="bash-tips">Bash tips</h3>
+<p>In deze sectie vind je een aantal tips voor het gebruik van de Bash-shell. In deze cursus maak je intensief gebruik van de shell, en het loont de moeite om Bash wat beter te leren kennen. Het zit immers vol met interessante features die je toelaten productiever te werken. Online is hier nog veel meer over te vinden (Rowe, 2009).</p>
+<p>De tips hier gelden ook voor Windows- en MacOS-gebruikers! Windows-gebruikers hebben beschikking over een recente versie van Bash via Git (Git Bash). In MacOS X zit ook een Bash-shell, weliswaar een zeer oude versie. Je kan een recente versie installeren via HomeBrew.</p>
+<ul>
+<li><strong>Gebruik TAB-completion.</strong> Je kan een deel van een commando of pad intikken en dan de TAB-toets indrukken. Indien mogelijk zal Bash het woord vervolledigen, of mogelijke alternatieven tonen. Als je de package bash-completion installeert zijn er nog veel meer mogelijkheden.</li>
+<li><strong>Gebruik de command-history.</strong> Bash houdt de commando’s die je eerder gebruikt hebt bij. Met de pijltjestoetsen kan je eerdere commando’s terug halen. Gebruik <code>Ctrl-R</code> om te zoeken in de command history. Je kan dan een fragment van het commando intikken, Bash toont dan het laatste commando waar dat tekstfragment in voorkomt.</li>
+<li><strong>Bang-bang!!</strong>  In Bash zijn er enkele shortcuts voorzien voor (delen van) het vorige commando. <code>!!</code> staat voor het gehele vorige commando, <code>!$</code> voor het laatste argument en <code>!*</code> voor alle argumenten. Een voorbeeldje van het gebruik:</li>
+</ul>
+<pre><code class="language-console">$ dnf update
+You need to be root to perform this command.
+$ sudo !!
+sudo dnf update
+[...]
+$ mkdir -p some/long/path/i/dont/want/to/repeat
+$ cd !$
+cd some/long/path/i/dont/want/to/repeat
+$
+</code></pre>
+<ul>
+<li>
+<p><strong>Toetsenbordcombinaties.</strong> Naast <code>Ctrl-R</code> van hierboven zijn er nog een aantal nuttige toetsenbordcombinaties.</p>
+<ul>
+<li><code>Ctrl-C</code> onderbreekt het huidige proces</li>
+<li><code>Ctrl-Z</code> pauzeert het huidige proces (haal het terug met fg)</li>
+<li><code>Ctrl-D</code> sluit de shell af (enkel op lege regel)</li>
+<li><code>Ctrl-K</code> verwijdert de tekst rechts van de cursor</li>
+<li><code>Ctrl-U</code> verwijdert de tekst links van de cursor</li>
+<li><code>Ctrl-T</code> verwisselt letterteken onder de cursor met dat voor de cursor</li>
+<li><code>Alt-T</code> verwisselt woord voor met woord na de cursor</li>
+</ul>
+<p>Er bestaan nog veel meer combinaties. Deze kan je vinden in de man-pagina <code>bash(1)</code> in de sectie READLINE (subsectie Readline Command Names en volgende).</p>
+</li>
+<li>
+<p><strong>Personaliseer de shell.</strong> Je kan het gedrag van de shell in hoge mate aan je eigen wensen aanpassen door het bestand <code>~/.bashrc</code> aan te passen. Je kan het gedrag van tab-completion of de command history aanpassen, een eigen commandoprompt instellen, aliassen (zie verder) of functies definiëren, enz. Het zou ons te ver leiden om alle mogelijkheden uit te diepen, maar je kan een relatief eenvoudig voorbeeld vinden in <a href="https://github.com/bertvv/server-dotfiles/">https://github.com/bertvv/server-dotfiles/</a> (installatie-instructies te vinden in de README), en een meer uitgebreid voorbeeld in <a href="https://github.com/bertvv/dotfiles/">https://github.com/bertvv/dotfiles/</a> (of gelijknamige reposi-
+tories van andere Github-gebruikers).</p>
+</li>
+<li><strong>Aliassen</strong> zijn een soort shortcuts voor commando’s die je vaak gebruikt. Dit kan enorm veel typwerk besparen. Je kan ze toevoegen in je <code>~/.bashrc</code>. Enkele voorbeelden ter inspiratie:</li>
+</ul>
+<pre><code class="language-bash">alias l='ls -l --si --time-style=long-iso --color'
+alias a='git add'
+alias c='git commit -m'
+alias h='git log --pretty=”format:%C(yellow)%h %C(blue)%ad %C(reset)%sC(red)%d %C(green)%an%C(reset), %C(cyan)%ar&quot; --date=short --graph --all'
+alias s='git status'
+alias vu='vagrant up'
+alias vD='vagrant destroy'
+alias infra='cd /home/bert/Documents/Courses/InfraAutomation/21-22'
+</code></pre>
+<p>Nog meer voorbeelden vind je in <a href="https://github.com/bertvv/dotfiles/blob/master/.bash.d/aliases.sh">https://github.com/bertvv/dotfiles/blob/master/.bash.d/aliases.sh</a>.</p>
+<p>Voor meer complexere shortcuts is <code>alias</code> minder geschikt, maar daarvoor kan je in <code>.bashrc</code> een functie definiëren, bv.</p>
+<pre><code class="language-bash"># Usage: dip CONTAINER
+# This function will get the IP-address of the specified Docker container
+dip() {
+    docker container inspect &quot;${1}&quot; | jq '.[]|.NetworkSettings.Networks|.[]|.IPAddress'
+}
+</code></pre>
+<h2 id="vagrant">Vagrant</h2>
+<p>Vagrant is een command line tool die het aanmaken en configureren van virtuele machines automatiseert. Het ondersteunt een aantal virtualisatieplatforms, o.a. VirtualBox, Hyper-V, libvirt, enz. Wij zullen het gebruiken in combinatie met VirtualBox.</p>
+<p>Je Git repository bevat een aantal Vagrant-omgevingen voor het opzetten van de VMs voor
+je labo-opdrachten. Je kan een overzicht van de VMs opvragen met <code>vagrant status</code>. Dit commando moet uitgevoerd worden in een directory waar een <code>Vagrantfile</code> te vinden is. In dat geval ziet de uitvoer er bijvoorbeeld zo uit:</p>
+<pre><code class="language-console">$ vagrant status
+Current machine states:
+
+srv001              not created (virtualbox)
+
+The environment has not yet been created. Run `vagrant up` to
+create the environment. If a machine is not created, only the
+default provider will be shown. So if a provider is not listed,
+then the machine is not created for that environment.
+$
+</code></pre>
+<p>Deze omgeving bevat één virtuele machine met naam <code>srv001</code>. Deze VM kan opgestart worden met <code>vagrant up srv001</code>. De eerste keer dat je dit doet wordt er een basis-VM gedownload met een minimale Linux-installatie. Doe dit best op een performant netwerk, bv. het bekabelde netwerk op de campus of thuis/op kot, en niet via WiFi. Deze “base box” wordt bijgehouden en zal telkens dienst doen als basis voor het opzetten van alle hosts in onze opstelling. Het downloaden gebeurt dus slechts één keer.</p>
+<p>Na opstarten kan je inloggen met <code>vagrant ssh srv001</code>. Je bent ingelogd als gebruiker vagrant en kan commando’s uitvoeren met root-rechten door er <code>sudo</code> voor te plaatsen (geen wachtwoord vereist). Als het nodig mocht zijn: het wachtwoord van de gebruikers <code>vagrant</code> en <code>root</code> is telkens <code>vagrant</code>.</p>
+<p>Als je <code>ls /</code> uitvoert, zal je merken dat er een directory <code>/vagrant</code> bestaat. Dit is je lokale repository op je fysieke systeem die gemount is binnen de VM. Dit is een eenvoudige manier om bestanden te delen tussen VM en het fysieke systeem.</p>
+<p>Let er op dat je VMs niet meer vanuit je VirtualBox GUI opstart of bewerkt. Doe dit nu enkel met Vagrant en vanuit een terminal. Het commando <code>vagrant</code> moet altijd uitgevoerd worden vanuit de directory waar het bestand <code>Vagrantfile</code> zich bevindt.</p>
+<p>De belangrijkste Vagrant commando’s worden opgesomd in de tabel hieronder. Daar waar <code>[VM]</code> tussen rechte haken staat, is dat een optioneel argument. Als je het weglaat, wordt de actie op alle VMs tegelijk uitgevoerd.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Commando</th>
+<th align="left">Functie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">vagrant status</td>
+<td align="left">Geef een overzicht van de Vagrant omgeving</td>
+</tr>
+<tr>
+<td align="left"><code>vagrant up [VM]</code></td>
+<td align="left">Start VM op</td>
+</tr>
+<tr>
+<td align="left"><code>vagrant provision [VM]</code></td>
+<td align="left">Voer het configuratiescript voor VM uit</td>
+</tr>
+<tr>
+<td align="left"><code>vagrant ssh VM</code></td>
+<td align="left">Log in op VM als gebruiker <code>vagrant</code></td>
+</tr>
+<tr>
+<td align="left"><code>vagrant halt [VM]</code></td>
+<td align="left">Zet VM uit</td>
+</tr>
+<tr>
+<td align="left"><code>vagrant reload [VM]</code></td>
+<td align="left">Herstart VM</td>
+</tr>
+<tr>
+<td align="left"><code>vagrant destroy [VM]</code></td>
+<td align="left">Vernietig VM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="markdown">Markdown</h2>
+<p><a href="https://daringfireball.net/projects/markdown/">Markdown</a> is een syntax die toelaat om geformatteerde tekst in een eenvoudige platte tekstformaat te schrijven en deze vervolgens om te zetten naar HTML (zodat je het kan bekijken in de webbrowser), PDF (om af te drukken), LaTeX, enz. Markdown is de standaard geworden voor het schrijven van <a href="https://guides.github.com/features/mastering-markdown/">handleidingen en documentatie op Github</a>.</p>
+<p>Je labo-verslagen en documentatie moeten ook in Markdown geschreven worden. Dit heeft een aantal voordelen: omdat Markdown tekstgebaseerd is, kan het in een versiebeheersysteem opgeslagen worden. Met Word-documenten gaat dit niet (Git is niet geschikt om wijzigingen in binaire bestanden te traceren). Een verzameling tekstbestanden is ook makkelijker te doorzoeken dan een verzameling Word-documenten, bijvoorbeeld met een tool als <a href="https://geoff.greer.fm/ag/">The Silver Searcher</a>.</p>
+<p><strong>Leer tekst correct opmaken met Markdown.</strong> <a href="https://www.markdownguide.org/">Dit is heel eenvoudig te leren</a> en kost weinig inspanning. Maar als je je niet houdt aan enkele basisregels, wordt je tekst niet correct omgezet naar HTML met een moeilijk leesbaar verslag als gevolg.</p>
+<p>Goede teksteditors bieden ondersteuning voor Markdown en kunnen je een preview laten zien van hoe het bestand er in HTML zou uitzien. Er bestaan VSCode plugins die de basis-ondersteuning uitbreidt met enkele features die je productiviteit verhogen. Markdown All in One (door Yu Zhang) en markdownlint (door David Anson) zijn de interessantste:</p>
+<ul>
+<li>Shortcut <code>Ctrl+Shift+V</code> toont een preview van het bestand met opmaak</li>
+<li>Shortcut <code>Alt+Shift+F</code> (Linux: <code>Ctrl+Shift+I</code>) formatteert tabellen zodat de verticale lijnen altijd mooi uitgelijnd zijn.</li>
+<li>Opmaak van wiskundige formules in LaTeX-notatie</li>
+<li>Markdownlint toont fouten in je Markdown-code aan de hand van een gekleurde golvende lijnt onder de tekst (zoals een spell-checker) en vat ze onderaan in het "Problems"-paneel samen in een lijst.</li>
+</ul>
+<p>Met deze hulpmiddelen is het eenvoudig om Markdown correct te gebruiken en een mooi opgemaakte HTML-pagina te krijgen als je je verslagen naar Github pusht.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

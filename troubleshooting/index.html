@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://hogenttin.github.io/infra-syllabus/troubleshooting/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Troubleshooting - Infrastructure Automation: Syllabus</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Infrastructure Automation: Syllabus</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Studiewijzer</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../intro/" class="nav-link">Intro</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../containers/" class="nav-link">Containers</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ci-cd/" class="nav-link">CICD</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Troubleshooting</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../cfgmgmt/" class="nav-link">ConfigMgmt</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ci-cd/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../cfgmgmt/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/HoGentTIN/infra-syllabus/edit/main/docs/troubleshooting.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#bottom-up-troubleshooting" class="nav-link">Bottom-up troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enkele-algemene-richtlijnen" class="nav-link">Enkele algemene richtlijnen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fysieke-en-netwerktoegangslaag" class="nav-link">Fysieke en netwerktoegangslaag</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#internetlaag" class="nav-link">Internetlaag</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#transportlaag" class="nav-link">Transportlaag</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#applicatielaag" class="nav-link">Applicatielaag</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#troubleshooting-tips-voor-specifieke-services-en-situaties" class="nav-link">Troubleshooting tips voor specifieke services en situaties</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tldr-checklist" class="nav-link">TL;DR checklist</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="troubleshooting">Troubleshooting</h1>
+<p>TODO: intro, motivatie</p>
+<h2 id="bottom-up-troubleshooting">Bottom-up troubleshooting</h2>
+<p>Wanneer je problemen met een netwerkservice moet troubleshooten is het essentieel om een <strong>systematische en grondige</strong> benadering te volgen. Als model voor een systematische aanpak gebruiken we hier de TCP/IP protocolstack. We doorlopen die van de onderste laag naar boven en controleren op elke laag alle nodige instellingen. Het is belangrijk om deze volgorde aan te houden en geen stappen over te slaan. Als een netwerkdienst niet beschikbaar is voor gebruikers heeft het geen zin om de firewall-configuratie te controleren, als er een probleem is met de routering naar de server.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Laag</th>
+<th align="left">Protocols</th>
+<th align="left">Sleutelwoorden</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Applicatielaag</td>
+<td align="left">HTTP, DNS, SMB, FTP, SSH, ...</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Transportlaag</td>
+<td align="left">TCP, UDP</td>
+<td align="left">sockets, poorten</td>
+</tr>
+<tr>
+<td align="left">Internetlaag</td>
+<td align="left">IP, ICMP</td>
+<td align="left">routering, IP-adressering</td>
+</tr>
+<tr>
+<td align="left">Netwerktoegangslaag</td>
+<td align="left">Ethernet</td>
+<td align="left">switch, MAC-adressering</td>
+</tr>
+<tr>
+<td align="left">Fysieke laag</td>
+<td align="left"></td>
+<td align="left">UTP-kabel</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enkele-algemene-richtlijnen">Enkele algemene richtlijnen</h2>
+<p>Voor we de nodige controles op elke laag overlopen, eerst enkele algemene best-practices:</p>
+<ul>
+<li>Stel een <strong>checklist</strong> samen en houd deze up-to-date terwijl je meer ervaring opdoet. Dit is belangrijk! De kan is klein dat je elk commando uit het hoofd kent en als je met netwerkproblemen te kampen hebt, kan je niet gaan Googlen...</li>
+<li>Wees <strong>systematisch</strong> en volg dezelfde stappen in de juiste volgorde.</li>
+<li>Wees <strong>grondig</strong>, en sla geen stappen over (bijvoorbeeld het controleren van de kabels), tenzij bewezen is dat alles op dat niveau werkt zoals verwacht.</li>
+<li>Werk in <strong>kleine stappen</strong> en controleer bij elke wijziging of deze het verwachte resultaat oplevert.</li>
+<li>Maak <strong>geen veronderstellingen</strong>. Controleer.</li>
+<li>Bewaar een <strong>reservekopie</strong> van originele configuratiebestanden en de laatste "werkende" versie.</li>
+<li><strong>Valideer</strong> altijd de syntaxis van configuratiebestanden voordat je ze toepast.</li>
+<li>Controleer de (juiste) <strong>systeemlogbestanden</strong>. Leer jezelf aan hoe je efficiënt moet zoeken in de systeemlogs.</li>
+<li>Open een aparte terminal die de <strong>logs in realtime</strong> toont (bijvoorbeeld journalctl -f)</li>
+<li><strong>Automatiseer je tests</strong> (met een Shell-script, <a href="https://github.com/bats-core/bats-core">BATS-testscript</a>, Ansible-playbook, Serverspec, etc.)</li>
+<li><strong>Foutmeldingen</strong> geven meestal een idee van waar je moet zoeken en kunnen een snelkoppeling zijn in het probleemoplossingsproces. Zoek naar de foutmelding in de logboeken of gegenereerd door clientsoftware en weet hoe je deze moet interpreteren. u</li>
+</ul>
+<p>En tenslotte:</p>
+<ul>
+<li><strong>Stop met pingen naar www.google.com!</strong> Dit is geen goede test, want je hebt er niets aan als dit niet lukt. Er moeten teveel voorwaarden vervuld zijn eer dit commando kan slagen.</li>
+</ul>
+<h2 id="fysieke-en-netwerktoegangslaag">Fysieke en netwerktoegangslaag</h2>
+<p>In deze fase controleren we de netwerkhardware, met name netwerkkabels en poorten.</p>
+<ul>
+<li>Staat de stroom aan?</li>
+<li>Is de netwerkkabel aangesloten?<ul>
+<li>Ga in VirtualBox naar de VM-instellingen, Netwerk, selecteer de actieve interfaces, klik op "Geavanceerd" en zorg ervoor dat het selectievakje "Kabel aangesloten" is aangevinkt.</li>
+<li>Gebruik bij een fysieke UTP-kabel een kabeltester om te controleren of deze goed werkt</li>
+</ul>
+</li>
+<li>Branden de LED's van de Ethernet-poort, zowel op de machine als op de switch?<ul>
+<li>Zo niet, test dan de kabel</li>
+<li>Sommige schakelaars hebben een andere kleur voor b.v. FastEthernet (100 Mbps) en Gigabit Ethernet. Controleer of je de verwachte kleur ziet.</li>
+</ul>
+</li>
+<li>Gebruik het commando <code>ip-link</code><ul>
+<li>UP: ok, de interface is aangesloten</li>
+<li>NO-CARRIER: geen signaal op deze interface</li>
+</ul>
+</li>
+</ul>
+<p>Kabel is correct aangesloten:</p>
+<pre><code class="language-console">$ ip link
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s31f6: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 20:2f:b9:f1:cc:84 brd ff:ff:ff:ff:ff:ff
+</code></pre>
+<p>Kabel is <strong>niet</strong> correct aangesloten:</p>
+<pre><code class="language-console">$ ip l
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s31f6: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+    link/ether 20:2f:b9:f1:cc:84 brd ff:ff:ff:ff:ff:ff
+</code></pre>
+<h2 id="internetlaag">Internetlaag</h2>
+<p>De internetlaag is verantwoordelijk voor het routeren van netwerkverkeer tussen hosts op het netwerk. Normaal krijgt een apparaat dat aansluit op een lokaal netwerk automatisch instellingen toegekend van een DHCP-server. Servers hebben soms een vast IP-adres en daar moet je dan toch deze instellingen controleren. Werk altijd in deze volgorde:</p>
+<ol>
+<li>Controleer de lokale netwerkinstellingen op het apparaat</li>
+<li>Controleer routering binnen het lokaal netwerk</li>
+<li>Controleer routering naar het internet</li>
+</ol>
+<h3 id="lokale-netwerkinstellingen">Lokale netwerkinstellingen</h3>
+<p>Om te kunnen communiceren, moet elke host <em>drie</em> instellingen correct hebben geconfigureerd:</p>
+<ol>
+<li>Aan de netwerkinterface moet een <strong>IP-adres</strong> zijn toegewezen</li>
+<li>Er moet een <strong>standaardgateway</strong> zijn ingesteld</li>
+<li>Er moet een <strong>DNS-server</strong> zijn ingesteld</li>
+</ol>
+<p>Het IP-adres kan automatisch (DHCP) of handmatig zijn ingesteld. Controleer dit in <code>/etc/sysconfig/network-scripts/ifcfg-IFACE</code> (met IFACE de naam van de netwerkinterface).</p>
+<p>Dit is een fragment uit een netwerkinterfaceconfiguratiebestand dat is geconfigureerd om DHCP te gebruiken:</p>
+<pre><code class="language-bash">DEVICE=&quot;enp0s3&quot;
+ONBOOT=&quot;yes&quot;
+BOOTPROTO=&quot;dhcp&quot;
+</code></pre>
+<p>Dingen om te controleren:</p>
+<ul>
+<li><code>DEVICE</code> moet de interfacenaam zijn</li>
+<li><code>ONBOOT</code> moet <code>yes</code> zijn, anders zal het systeem niet proberen de interface te activeren bij het opstarten of bij het herstarten van de netwerkinterfaces (<code>systemctl restart network</code>)</li>
+<li><code>BOOTPROTO</code> moet zijn ingesteld op <code>dhcp</code></li>
+</ul>
+<p>Als er een vast IP-adres is ingesteld, kan de configuratie er als volgt uit zien:</p>
+<pre><code class="language-bash">DEVICE=enp0s8
+ONBOOT=yes
+BOOTPROTO=none
+IPADDR=192.168.56.24
+NETMASK=255.255.255.0
+</code></pre>
+<ul>
+<li><code>DEVICE</code> en <code>ONBOOT</code> zijn ingesteld zoals in het vorige voorbeeld</li>
+<li><code>BOOTPROTO</code> zou <code>none</code> moeten zijn</li>
+<li><code>IPADDR</code> en <code>NETMASK</code> moeten gespecifieerd zijn</li>
+</ul>
+<h4 id="ip-adres-controleren">IP-adres controleren</h4>
+<p>Gebruik <code>ip address</code> (of de korte versie <code>ip a</code>) om de IP-adressen voor elke interface weer te geven.</p>
+<p>Je moet de verwachte waarde kennen! Indien je het exacte IP-adres kent moet je in ieder geval weten wat het netwerkbereik of netwerk-IP en netwerkmasker is van het LAN waarin de host zich bevindt.</p>
+<ul>
+<li>Veel thuisrouters hebben een IP-bereik van 192.168.0.0/24 of 192.168.1.0/24</li>
+<li>Op een VirtualBox NAT-interface moet het IP-adres van de VM 10.0.2.15/24 zijn. Let hier op het netwerkasker! Normaal is dat /8 voor dit IP-adres!</li>
+<li>Op een VirtualBox host-only interface hangt het IP-adres van de VM af van hoe je dit netwerk hebt geconfigureerd. Het <em>standaard</em> host-only netwerk heeft IP-bereik 192.168.56.0/24, met een DHCP-server die adressen uitdeelt vanaf 192.168.56.101 t/m 192.168.56.254.</li>
+</ul>
+<p>Mogelijke problemen en oorzaken (in geval van automatische IP-toewijzing met DHCP):</p>
+<ul>
+<li>Geen IP:<ul>
+<li>De DHCP-server is onbereikbaar</li>
+<li>De DHCP-server geeft geen IP aan deze host (bv. als gewerkt wordt met gereserveerde IP-adressen op basis van MAC-adres)</li>
+</ul>
+</li>
+<li>Het IP-adres ziet eruit als 169.254.x.x<ul>
+<li>Er kon geen DHCP-server worden bereikt en er werd een "link-local"-adres toegewezen (typisch voor Windows-systemen)</li>
+</ul>
+</li>
+<li>Het IP-adres niet in het verwachte bereik<ul>
+<li>Mogelijk heb je voordien per ongeluk een vast IP-adres ingesteld en ben je vergeten het opnieuw op DHCP in te stellen...</li>
+<li>Misschien is de DHCP-server verkeerd ingesteld</li>
+</ul>
+</li>
+</ul>
+<p>Mogelijke problemen en oorzaken (in geval van handmatige IP-instelling):</p>
+<ul>
+<li>Het IP-adres ligt niet in het verwachte bereik<ul>
+<li>Fout bij toewijzing van het IP-adres, controleer het configuratiebestand</li>
+</ul>
+</li>
+<li>Correct IP-adres, maar je krijgt de foutboodschap "network unreachable"<ul>
+<li>Controleer het netwerkmasker, dit moet identiek zijn voor alle hosts op het LAN!</li>
+</ul>
+</li>
+</ul>
+<h4 id="default-gateway">Default Gateway</h4>
+<p>Gewoonlijk is een host via een switch verbonden met een LAN. Netwerkverkeer naar de buitenwereld gaat via een router, aangesloten op hetzelfde LAN. Elke host op het LAN zou deze router, de "default gateway", moeten kennen.</p>
+<p>Gebruik het commando <code>ip route</code> (of korte versie <code>ip r</code>). Er zou een regel moeten zijn die begint met <code>default via x.y.z.w</code>.</p>
+<p>Mogelijke problemen en oorzaken (in geval van automatische IP-toewijzing met DHCP):</p>
+<ul>
+<li>Er is geen standaard gateway ingesteld<ul>
+<li>er is hoogstwaarschijnlijk ook een probleem met het IP-adres van deze host, los dit eerst op</li>
+<li>Als je de DHCP-server beheert, is deze misschien slecht geconfigureerd?</li>
+</ul>
+</li>
+<li>Onverwacht standaard gateway-adres<ul>
+<li>Mogelijk heb je de standaardgateway eerder handmatig ingesteld en ben je vergeten deze opnieuw op DHCP in te stellen</li>
+<li>Als je de DHCP-server beheert, is deze misschien slecht geconfigureerd?</li>
+</ul>
+</li>
+</ul>
+<h4 id="dns-server">DNS-server</h4>
+<p>Om het Internet te kunnen gebruiken, heeft elke host toegang nodig tot een DNS-server om de IP-adressen die bij hostnamen (bv. www.hogent.be) horen te kunnen opzoeken. Bekijk het bestand <code>/etc/resolv.conf</code>. Het heeft meestal een header die vermeldt dat het automatisch is gegenereerd, en zou een of meer regels moeten hebben die beginnen met <code>nameserver</code>.</p>
+<pre><code class="language-console">$ cat /etc/resolv.conf
+# Generated by NetworkManager
+zoek hogent.be
+naamserver 193.190.173.1
+naamserver 193.190.173.2
+</code></pre>
+<p>Voor elke hostnaam die je vanop deze machine wil bereiken, zal het systeem een query sturen naar één van de opgegeven nameservers om het IP-adres op te vragen.</p>
+<p>Op recente versies van enkele Linux-distributies (bv. Ubuntu, Fedora) zal je het volgende zien:</p>
+<pre><code class="language-console">$ cat /etc/resolv.conf
+# This file is managed by man:systemd-resolved(8). Do not edit.
+[...]
+nameserver 127.0.0.53
+</code></pre>
+<p>Dan is <code>systemd-resolved</code> geïnstalleerd. Die simuleert zelf het gedrag van een DNS-server die antwoordt op DNS-queries. <code>systemd-resolved</code> zal dan de vraag doorgeven aan een externe DNS-server. Welke dat is kan je opvragen met <code>resolvectl</code>:</p>
+<pre><code class="language-console">$ resolvectl
+Global
+       Protocols: LLMNR=resolve -mDNS -DNSOverTLS DNSSEC=no/unsupported
+resolv.conf mode: stub
+
+Link 2 (enp0s31f6)
+    Current Scopes: DNS LLMNR/IPv4 LLMNR/IPv6                                   
+         Protocols: +DefaultRoute +LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 192.168.0.1
+       DNS Servers: 192.168.0.1
+</code></pre>
+<p>In dit voorbeeld is dat 192.168.0.1, wellicht een thuisrouter die ook dienst doet als DNS forwarder.</p>
+<h3 id="controleer-routering-binnen-het-lan">Controleer routering binnen het LAN</h3>
+<p>Als de hierboven opgesomde instellingen correct zijn, kan je controleren of andere hosts op het LAN bereikbaar zijn.</p>
+<ul>
+<li>Ping de standaard gateway: <code>ping a.b.c.d</code></li>
+<li>Ping een andere bekende host op het LAN</li>
+<li>Als dit werkt kan je proberen een host buiten het LAN te pingen</li>
+</ul>
+<p><strong>Houd er rekening mee</strong> dat <code>ping</code> (en andere hulpprogramma's voor het oplossen van netwerkproblemen zoals de <code>traceroute</code>-familie) niet altijd werken. Sommige systeembeheerders zullen ICMP-verkeer op routers blokkeren, waardoor de resultaten onbruikbaar worden.</p>
+<p>Een commando als <code>ping www.google.com</code> (voor sommigen het eerste commando dat ze proberen in geval van netwerkverbindingsproblemen) is niet erg geschikt, omdat het van te veel dingen tegelijk afhangt:</p>
+<ul>
+<li>de netwerkinstellingen van de host moeten correct zijn</li>
+<li>routering zou moeten werken</li>
+<li>DNS zou beschikbaar moeten zijn</li>
+<li>geen enkele router tussen deze host en het doel mag ICMP blokkeren</li>
+<li>enz.</li>
+</ul>
+<p>Een Windows-systeem kan ook ICMP-verkeer blokkeren (inclusief <code>ping</code>). Zorg ervoor dat je de firewall-instellingen controleert en indien nodig dit type netwerkverkeer toestaat. De volgende PowerShell-oneliner doet precies dat:</p>
+<pre><code class="language-powershell">Get-NetFirewallRule -DisplayName &quot;*Echo Request*&quot; | Set-NetFirewallRule -enabled true
+</code></pre>
+<h3 id="controleer-beschikbaarheid-van-de-dns-service">Controleer beschikbaarheid van de DNS service</h3>
+<p>Het is niet omdat er een DNS-server geconfigureerd is in <code>/etc/resolv.conf</code> of via <code>systemd-resolved</code> dat deze ook beschikbaar is voor clients en antwoordt op requests. Je kan controleren of de DNS-service beschikbaar is met <code>nslookup</code> (dit commando ken je allicht van Windows), <code>dig</code> of <code>getent ahosts</code>.</p>
+<pre><code class="language-console">$ nslookup www.hogent.be
+Server:     127.0.0.53
+Address:    127.0.0.53#53
+
+Non-authoritative answer:
+www.hogent.be   canonical name = hogent.be.
+Name:   hogent.be
+Address: 193.190.173.132
+</code></pre>
+<p>In dit voorbeeld stuurt <code>nslookup</code> de query naar de DNS-server gespecifieerd in <code>/etc/resolv.conf</code>. Je kan ook een specifieke DNS-server ondervragen:</p>
+<pre><code class="language-console">$ nslookup www.hogent.be 9.9.9.9
+Server:     9.9.9.9
+Address:    9.9.9.9#53
+
+Non-authoritative answer:
+www.hogent.be   canonical name = hogent.be.
+Name:   hogent.be
+Address: 193.190.173.132
+</code></pre>
+<p>Het commando <code>dig</code> is veel uitgebreider en hier kan je ook andere types DNS-queries uitvoeren (NS, MX, AXFR, enz.):</p>
+<pre><code class="language-console">$ dig www.hogent.be @9.9.9.9 +short
+hogent.be.
+193.190.173.132
+</code></pre>
+<p>Hiermee vraag je het IP-adres van www.hogent.be aan DNS-server 9.9.9.9 en drukt het resultaat in een bondige vorm af. Als je <code>+short</code> weglaat krijg je meer informatie te zien. Zie het onderdeel BIND troubleshooting voor meer info.</p>
+<p>Op servers en systemen met een minimale installatie, is het commando <code>nslookup</code> of <code>dig</code> misschien niet geïnstalleerd. Als je met netwerkproblemen te kampen hebt, kan je het ook niet gauw installeren (en nieuwe software installeren op een productieserver is sowieso geen goed idee). In dat geval kan je gebruik maken van <code>getent ahosts</code>:</p>
+<pre><code class="language-console">$ getent ahosts www.hogent.be
+193.190.173.132 STREAM hogent.be
+193.190.173.132 DGRAM  
+193.190.173.132 RAW 
+</code></pre>
+<p>Het nadeel van dit commando is dat je er enkel de in <code>/etc/resolv.conf</code> gespecifieerde DNS-server kan ondervragen, maar dat is natuurlijk beter dan niets.</p>
+<p>Wanneer de DNS-server niet gespecifieerd is, of niet antwoordt op queries, kan je dezelfde zaken controleren als bij de default gateway.</p>
+<h3 id="routering-buiten-het-lan">Routering buiten het LAN</h3>
+<p>Als binnen het lokale netwerk routering en DNS in orde zijn, kan je proberen om te pingen naar een host buiten het LAN. Begin met een host die zich nog relatief kort bij bevindt, en eventueel op IP-adres in plaats van op hostnaam.</p>
+<p>Een andere nuttige test is:</p>
+<pre><code class="language-console">$ curl icanhazip.com
+
+</code></pre>
+<p>Curl is een command-line tool om te interageren met een webserver. De website <a href="https://icanhazip.com">https://icanhazip.com</a> was oorspronkelijk een hobbyproject van systeembeheerder <a href="https://major.io/">Major Hayden</a> en wordt nu <a href="https://major.io/2021/06/06/a-new-future-for-icanhazip/">onderhouden door Cloudflare</a>. De website is heel eenvoudig en bevat zelfs geen HTML, maar toont enkel het publieke IP-adres van waar jij de pagina hebt opgevraagd. Op die manier controleer je ook of je Internettoegang hebt, of web-verkeer doorgelaten wordt en wat het publieke IP-adres is van het netwerk waar je je bevindt.</p>
+<h2 id="transportlaag">Transportlaag</h2>
+<p>In de transportlaag controleren we volgende zaken:</p>
+<ul>
+<li>Draait de service?</li>
+<li>Luistert de service op het juiste poortnummer?</li>
+<li>Is de firewall correct geconfigureerd?</li>
+</ul>
+<p>We geven hier het voorbeeld van een webserver, maar je kan dit toepassen op elke service.</p>
+<h3 id="draait-de-service">Draait de service?</h3>
+<p>Gebruik hiervoor het commando <code>systemctl status</code>. We verwachten ergens in de uitvoer "active (running)" te zien.</p>
+<pre><code class="language-console">$ systemctl status httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+     Active: inactive (dead)
+       Docs: man:httpd.service(8)
+</code></pre>
+<p>In dit geval is de (Apache) webserver uitgeschakeld. We zien hier ook dat de service "disabled" is, wat betekent dat deze niet wordt opgestart bij het booten. Dit kan je oplossen met <code>sudo systemctl enable httpd</code>. We starten de service nu op en controleren het resultaat:</p>
+<pre><code class="language-console">$ sudo systemctl start httpd
+[sudo] password for user: 
+$ systemctl status httpd
+● httpd.service - The Apache HTTP Server
+     Loaded: loaded (/usr/lib/systemd/system/httpd.service; disabled; vendor preset: disabled)
+     Active: active (running) since Fri 2021-06-25 21:46:10 CEST; 2s ago
+       Docs: man:httpd.service(8)
+   Main PID: 932880 (httpd)
+     Status: &quot;Started, listening on: port 80&quot;
+      Tasks: 213 (limit: 18723)
+     Memory: 23.3M
+        CPU: 100ms
+     CGroup: /system.slice/httpd.service
+             ├─932880 /usr/sbin/httpd -DFOREGROUND
+             ├─932881 /usr/sbin/httpd -DFOREGROUND
+             ├─932883 /usr/sbin/httpd -DFOREGROUND
+             ├─932884 /usr/sbin/httpd -DFOREGROUND
+             └─932885 /usr/sbin/httpd -DFOREGROUND
+
+jun 25 21:46:09 nb1100380 systemd[1]: Starting The Apache HTTP Server...
+jun 25 21:46:09 nb1100380 httpd[932880]: AH00558: httpd: Could not reliably determine the server's fully qualified domain nam&gt;
+jun 25 21:46:10 nb1100380 httpd[932880]: Server configured, listening on: port 80
+jun 25 21:46:10 nb1100380 systemd[1]: Started The Apache HTTP Server.
+</code></pre>
+<p>Nu is de Apache server wel actief.</p>
+<h3 id="juiste-poortnummers">Juiste poortnummers</h3>
+<p>Gebruik het commando <code>ss -tln</code> of <code>sudo ss -tlnp</code> (Show Sockets) om te controleren welke TCP-services (optie <code>-t</code>) op dit moment een open server-socket (<code>-l</code>) in gebruik hebben. Met de optie <code>-n</code> toon je de poortnummers in plaats van de service-naam (zoals gespecifieerd in <code>/etc/services</code>). De optie <code>-p</code> toont welk proces er luistert op deze server-socket, maar daar heb je root-rechten voor nodig (vandaar de <code>sudo</code>). Voor services die gebaseerd zijn op UDP geef je de optie <code>-u</code> in plaats van <code>-t</code>.</p>
+<pre><code class="language-console">$ ss -tln
+State         Recv-Q        Send-Q                 Local Address:Port                 Peer Address:Port        Process        
+LISTEN        0             4096                         0.0.0.0:5355                      0.0.0.0:*                          
+LISTEN        0             4096                   127.0.0.53%lo:53                        0.0.0.0:*                          
+LISTEN        0             128                          0.0.0.0:22                        0.0.0.0:*                          
+LISTEN        0             4096                            [::]:5355                         [::]:*                          
+LISTEN        0             511                                *:80                              *:*                          
+LISTEN        0             128                             [::]:22                           [::]:*                          
+</code></pre>
+<p>Vooral de kolom <code>Local Address:Port</code> is nuttig. "Local Address" geeft aan op welke netwerkinterface de service aan het luisteren is:</p>
+<ul>
+<li>127.0.0.1: enkel op de loopback-interface</li>
+<li>0.0.0.0 of *: op alle interfaces</li>
+<li>[::]: op alle interfaces (IPv6)</li>
+<li>Als er een specifiek IP-adres opgegeven wordt, dan luistert de service enkel op de netwerkinterface met dat IP-adres</li>
+</ul>
+<p>Verder moet je weten op welke poort je verwacht dat de service aan het luisteren is. Voor een webserver is dat typisch poort 80 (HTTP) en 443 (HTTPS). Poort 22 wordt normaal gebruikt door de Secure Shell daemon (<code>sshd</code>) en poort 53 door een DNS-server (in dit geval <code>systemd-resolved</code>, die ook poort 5353 gebruikt). Om zeker te zijn dat dit klopt, vragen we best ook de processen op:</p>
+<pre><code class="language-console">$ sudo ss -tlnp
+State   Recv-Q Send-Q  Local Address:Port  Peer Address:Port  Process                                                                                                                       
+LISTEN  0      4096          0.0.0.0:5355       0.0.0.0:*     users:((&quot;systemd-resolve&quot;,pid=704,fd=12))                                                                                    
+LISTEN  0      4096    127.0.0.53%lo:53         0.0.0.0:*     users:((&quot;systemd-resolve&quot;,pid=704,fd=17))                                                                                    
+LISTEN  0      128           0.0.0.0:22         0.0.0.0:*     users:((&quot;sshd&quot;,pid=760464,fd=5))                                                                                             
+LISTEN  0      4096             [::]:5355          [::]:*     users:((&quot;systemd-resolve&quot;,pid=704,fd=14))                                                                                    
+LISTEN  0      511                 *:80               *:*     users:((&quot;httpd&quot;,pid=932885,fd=4),(&quot;httpd&quot;,pid=932884,fd=4),(&quot;httpd&quot;,pid=932883,fd=4),(&quot;httpd&quot;,pid=932880,fd=4))              
+LISTEN  0      128              [::]:22            [::]:*     users:((&quot;sshd&quot;,pid=760464,fd=7))                                                                                             
+</code></pre>
+<p>Als de service opgestart is, maar niet op het juiste poortnummer luistert, dan zal die ook niet beschikbaar zijn voor clients. Meestal moet je het poortnummer specifiëren in het configuratiebestand voor die service. Controleer dit, herstart de service na de nodige aanpassingen en controleer opnieuw met <code>sudo ss -tlnp</code>.</p>
+<h3 id="firewall-instellingen">Firewall-instellingen</h3>
+<p>Laat de firewall netwerkverkeer door naar de service? Controleer dit met <code>firewall-ctl</code>:</p>
+<pre><code class="language-console">$ sudo firewall-cmd --list-all
+public (default, active)
+  interfaces: enp0s3 enp0s8
+  sources:
+  services: dhcpv6-client mdns samba-client ssh http https
+  ports:
+  masquerade: no
+  forward-ports:
+  icmp-blocks:
+  rich rules:
+</code></pre>
+<p>In dit geval zijn de services <code>http</code> en <code>https</code> bereikbaar. De services <code>dhcpv6-client mdns samba-client</code> staan op Fedora/RedHat altijd aan. Voor een server is <code>ssh</code> ook belangrijk en dit moet dus ook meestal aan staan.</p>
+<p>Controleer steeds of:</p>
+<ul>
+<li>De netwerkinterface waarop de service luistert wordt vermeld in de lijn die begint met <code>interfaces:</code></li>
+<li>De servicenaam wordt weergegeven.<ul>
+<li>De waarde moet er een zijn die wordt vermeld door <code>firewall-cmd --get-services</code>.</li>
+<li>Merk op dat de servicenaam voor <code>firewalld</code> <em>niet noodzakelijk</em> gelijk is aan de <code>systemd</code> servicenaam. Bijv. de BIND service heet <code>named.service</code>, terwijl er in de firewall-instellingen naar wordt verwezen met <code>dns</code>.</li>
+</ul>
+</li>
+<li>Als de servicenaam niet voorkomt in de uitvoer van <code>firewalld --get-services</code>, moeten de poortnummers en transportprotocol die door de service worden gebruikt worden vermeld (bijvoorbeeld bij gebruik van een niet-standaard poort of een service die niet bekend is onder 'firewalld').</li>
+</ul>
+<p>Voeg zo nodig de service toe aan de firewall-configuratie en herstart:</p>
+<pre><code class="language-console">$ sudo firewall-cmd --add-service=http --permanent 
+success
+$ sudo firewall-cmd --add-service=https --permanent 
+success
+$ sudo firewall-cmd --reload
+success
+</code></pre>
+<p>Vergeet hier de optie <code>--permanent</code> niet! Als je die weglaat, wordt de wijziging onmiddellijk doorgevoerd (wat op het eerste zicht is wat je wilt), maar na rebooten van het systeem of herstarten van de <code>firewalld.service</code>, zal deze tijdelijke wijziging ongedaan gemaakt worden en heb je terug de foute instellingen!</p>
+<p>Als je een poortnummer moet specifiëren gebruik je volgende notatie:</p>
+<pre><code class="language-console">$ sudo firewall-cmd --add-port=9000/tcp --permanent 
+success
+$ sudo firewall-cmd --reload
+success
+</code></pre>
+<p>Controleer na een wijziging altijd of de firewall-regels nu correct zijn!</p>
+<p>TODO: kadertekstje over verwarring bij de uitspraak "open poorten".</p>
+<h2 id="applicatielaag">Applicatielaag</h2>
+<p>Specifieke zaken waar je moet op letten in deze laag hangen voor een groot stuk af van de service die je aan het configureren/troubleshooten bent. Apache, nginx, BIND, Vsftpd, Postfix, enz. hebben allemaal een eigen structuur en configuratie met onderling grote verschillen. Je moet de service in kwestie dus goed leren kennen!</p>
+<p>Er zijn echter wel enkele algemene zaken die je in elke situatie kan controleren:</p>
+<ul>
+<li>De systeemlogs kunnen foutboodschappen bevatten die een indicatie zijn voor de oorzaak van het probleem.</li>
+<li>De meeste services hebben een tool waarmee je de syntax van het configuratiebestand kan controleren.</li>
+<li>De service moet beschikbaar zijn voor clients en antwoorden op requests/queries.</li>
+</ul>
+<h3 id="systeemlogbestanden">Systeemlogbestanden</h3>
+<p>Controleer systeemlogs met <code>journalctl</code> of door het logbestand voor de service op te zoeken in <code>/var/log</code>. Alle systeemlogs die beheerd worden door <code>systemd-journald</code> kan je met dat eerste commando opvragen. Sommige applicaties worden niet beheerd of herkend door <code>systemd-journald</code> en die houden hun logs bij als een tekstbestand (in de directory <code>/var/log</code>). Het is nuttig om tijdens het hele troubleshooting-proces een aparte terminal te openen en daarin de relevante logs te openen. In de voorbeelden hieronder zorgt de optie <code>-f</code> (kort voor <code>--follow</code>) er voor dat het commando wacht op nieuwe log-events en die meteen toont wanneer die zich voordoen. Op die manier kan je meteen het effect zien van commando's, configuratiewijzigingen of andere handelingen die je op het systeem uitvoert.</p>
+<ul>
+<li><code>sudo journalctl -f</code>: toont alle systeemlog-events die door <code>systemd-journald</code> ontvangen worden.</li>
+<li><code>sudo journalctl -f -u httpd.service</code>: zal enkel de logs van de Apache server tonen.</li>
+<li><code>sudo tail -f /var/log/httpd/error_log</code>: toont de inhoud van het tekstbestand <code>error_log</code>, waar soms foutboodschappen in terecht komen die je niet ziet met <code>journalctl</code>, zoals bijvoorbeeld de foutboodschappen van een PHP-applicatie.</li>
+</ul>
+<h3 id="configuratiebestanden">Configuratiebestanden</h3>
+<p>Controleer het configuratiebestand dat zich ergens in de directory <code>/etc/</code> moet bevinden. Voor Apache is dat bv. <code>/etc/httpd/httpd.conf</code>. Maak eerst een backup van de huidige toestand van het configuratiebestand voordat je wijzigingen aanbrengt!</p>
+<ul>
+<li>Valideer de syntaxis van het configuratiebestand, als dit voorzien is door de service.<ul>
+<li>Apache: <code>apachectl configtest</code></li>
+<li>BIND: <code>named-checkconf</code> en <code>named-checkzone</code></li>
+<li>Samba: <code>testparm</code></li>
+<li>Vsftpd: <code>vsftpd -olisten=NO</code></li>
+<li>enz.</li>
+</ul>
+</li>
+<li>Verbeter waar nodig fouten in het configuratiebestand en herstart daarna de service, bv: <code>sudo systemctl restart httpd.service</code>.<ul>
+<li>Controleer in de logs of er nieuwe of andere foutboodschappen verschijnen</li>
+<li>Controleer of de service nu wel draait (zie Transportlaag)</li>
+</ul>
+</li>
+</ul>
+<h3 id="beschikbaarheid-voor-clients">Beschikbaarheid voor clients</h3>
+<p>Als we alle voorgaande stappen doorlopen hebben, en eventuele fouten weggewerkt hebben, dan mogen we op dit punt verwachten dat de service nu correct werkt en beschikbaar is voor clients. We kunnen dit soms op de server zelf controleren (via de loopback-interface), maar het is belangrijk om dit over het netwerk te doen. Zo komen soms nog onverwachte problemen naar boven. Netwerkverkeer op de loopback-interface wordt bijvoorbeeld nooit tegengehouden door de firewall, terwijl dat via fysieke interfaces wel kan gebeuren. Naast het gebruiken van de normale client-software om de service aan te spreken (bv. een webbrowser), zijn er nog enkele andere tools die van pas kunnen komen bij het onderzoeken van de interactie tussen clients en de service.</p>
+<ul>
+<li>Je kan een portscan uitvoeren met <a href="https://nmap.org">nmap</a> om te controleren of de serverpoort bereikbaar is, bv.<ul>
+<li><code>sudo nmap -sS -p 80,443 192.168.56.24</code>: voer een TCP SYN scan uit op poorten 80 en 443</li>
+</ul>
+</li>
+<li>Gebruik een commandline-tool of test-commando om de service te ondervragen. Dit soort tools geven vaak betere foutboodschappen om de oorzaak van problemen te achterhalen dan de "normale" client-software voor gewone gebruikers. Voorbeelden:<ul>
+<li>Webservice: <code>wget http://192.168.56.24/</code>, <code>curl https://192.168.56.24/</code></li>
+<li>Samba: <code>nmblookup server</code>, <code>smbclient -Uuser%password //server/share</code></li>
+<li>FTP: <code>ftp server</code> of <code>curl --user user:password ftp://server/path/to/file</code></li>
+<li>DNS: <code>dig</code></li>
+<li>DHCP: <code>nmap</code> heeft <a href="https://nmap.org/nsedoc/scripts/dhcp-discover.html">een script</a> waarmee je dit kan testen</li>
+</ul>
+</li>
+<li>Soms is het nuttig om een packet sniffer zoals Tcpdump of Wireshark te gebruiken om de netwerktrafiek tussen clients en de service te bestuderen. Tegenwoordig is veel netwerkverkeer geëncrypteerd, dus de kans bestaat dat dit niet veel nuttige informatie oplevert.</li>
+</ul>
+<h2 id="troubleshooting-tips-voor-specifieke-services-en-situaties">Troubleshooting tips voor specifieke services en situaties</h2>
+<h3 id="bind">BIND</h3>
+<p>TODO</p>
+<h3 id="virtualbox-netwerkinstellingen">VirtualBox netwerkinstellingen</h3>
+<p>TODO</p>
+<h2 id="tldr-checklist">TL;DR checklist</h2>
+<p>Hieronder vind je een overzicht van de belangrijkste zaken die je moet controleren, en de commando's die je daarvoor kan gebruiken.</p>
+<ol>
+<li>Fysieke en netwerktoegangslaag<ul>
+<li>Controleer of de kabels goed aangesloten zijn</li>
+<li>Controleer of de kabel nog goed werkt</li>
+<li>Controleer de LEDs van de switchpoort</li>
+<li>Is de machine verbonden met de juiste switch?</li>
+<li>Krijgt de machine een signaal op de kabel? <code>ip link</code></li>
+</ul>
+</li>
+<li>Internetlaag<ol>
+<li>Controleer eerst lokale netwerkinstellingen<ul>
+<li>IP adres (<code>ip a</code>)</li>
+<li>default gateway (<code>ip r</code>)</li>
+<li>DNS (<code>cat /etc/resolv.conf</code> of <code>resolvectl</code>)</li>
+</ul>
+</li>
+<li>Routering binnen het LAN<ul>
+<li>ping naar de gateway en naar andere gekende hosts op het LAN</li>
+<li>controleer beschikbaarheid van DNS (<code>nslookup</code>, <code>dig</code>, <code>getent ahosts</code>)</li>
+</ul>
+</li>
+<li>Routering naar het internet<ul>
+<li>ping een gekende host buiten het LAN (let er op dat sommige routers ICMP-verkeer blokkeren en pingen naar buiten in dit geval niet werkt)</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Transportlaag<ol>
+<li>Is de service opgestart? <code>systemctl status</code></li>
+<li>Luistert de service op de juiste netwerkinterface en poortnummer? <code>sudo ss -tlnp</code></li>
+<li>Laat de firewall netwerkverkeer naar de service door? <code>sudo firewall-cmd --list-all</code></li>
+</ol>
+</li>
+<li>Applicatielaag<ul>
+<li>Controleer systeemlogs: <code>sudo journalctl -f -u SERVICE</code>, <code>tail -f /var/log/LOG_FILE</code></li>
+<li>Gebruik command-line tools om de service aan te spreken (<code>curl</code>, <code>smbclient</code>, <code>dig</code>, ...)</li>
+<li>Controleer of de service beschikbaar is over het netwerk (<code>nmap</code>, <code>wireshark</code>, ...)</li>
+</ul>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

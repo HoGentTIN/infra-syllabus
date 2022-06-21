@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        <link rel="canonical" href="https://hogenttin.github.io/infra-syllabus/">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Infrastructure Automation: Syllabus</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Infrastructure Automation: Syllabus</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Studiewijzer</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="intro/" class="nav-link">Intro</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="containers/" class="nav-link">Containers</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="ci-cd/" class="nav-link">CICD</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="troubleshooting/" class="nav-link">Troubleshooting</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="cfgmgmt/" class="nav-link">ConfigMgmt</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="intro/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/HoGentTIN/infra-syllabus/edit/main/docs/index.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#studiewijzer" class="nav-link">Studiewijzer</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#doel-en-plaats-van-de-cursus-in-het-curriculum" class="nav-link">Doel en plaats van de cursus in het curriculum</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#leerdoelen-en-competenties" class="nav-link">Leerdoelen en competenties</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#leerinhoud" class="nav-link">Leerinhoud</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#leermateriaal" class="nav-link">Leermateriaal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#werkvormen" class="nav-link">Werkvormen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#werk-en-leeraanwijzingen" class="nav-link">Werk- en leeraanwijzingen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#studiebegeleiding-en-planning" class="nav-link">Studiebegeleiding en planning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#evaluatie" class="nav-link">Evaluatie</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#licentie-informatie" class="nav-link">Licentie-informatie</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="studiewijzer">Studiewijzer</h1>
+<p>De inhoud van deze studiewijzer geldt zowel voor de <strong>reguliere studenten</strong> als de studenten <strong>afstandsleren (TILE)</strong>. Waar nodig wordt duidelijk onderscheid gemaakt tussen zaken die enkel voor één van deze twee groepen gelden. Wat betreft praktische afspraken, regelingen, verwachtingen, enz. in verband met deze cursus zijn de enige geldige bronnen van informatie:</p>
+<ul>
+<li>De studiefichefiche van dit opleidingsonderdeel, te bekijken via de Chamilo-
+cursus of <a href="https://hogent.be/studiefiches/">https://hogent.be/studiefiches/</a>;</li>
+<li>Deze studiewijzer;</li>
+<li>Documenten op Chamilo;</li>
+<li>Aankondigingen op Chamilo—deze worden ook telkens per e-mail naar de betrokken studenten gestuurd;</li>
+<li>Het <a href="https://www.hogent.be/student/een-vlotte-start/onderwijs-en-examenregeling/">Onderwijs- en Examenreglement (OER)</a>, incl. departementale aanvullingen (DOER).</li>
+</ul>
+<p>Jullie zijn zelf verantwoordelijk voor het opvolgen en lezen van alle aankondigingen. Studenten worden geacht hun opleidingsgerelateerde e-mails regelmatig op te volgen.</p>
+<p>Indien er ergens twijfel over bestaat, of er is iets niet duidelijk, neem dan zo snel mogelijk contact op met je lector. De aangewezen manieren worden opgesomd in Sectie <a href="#studiebegeleiding-en-planning">studiebegeleiding en planning</a>.</p>
+<p>De ervaring leert dat de onderlinge communicatie tussen studenten via Discord of Facebook leidt tot verwarring, foute informatie en overbodige discussie. Gebruik dus a.u.b. de officiële kanalen zodat we tot een open en correcte communicatie rond deze cursus kunnen komen.</p>
+<h2 id="doel-en-plaats-van-de-cursus-in-het-curriculum">Doel en plaats van de cursus in het curriculum</h2>
+<p>Deze cursus biedt een inleiding in het vakgebied <em>Infrastructure Automation,</em> d.w.z. het geautomatiseerd opzetten en in productie brengen van reproduceerbare en schaalbare netwerkdiensten.</p>
+<p>Klassiek werden (en worden) servers stap voor stap handmatig geïnstalleerd en geconfigureerd. Hopelijk houdt de systeembeheerder daarbij een gedetailleerde procedurehandleiding bij zodat dit werk kan gereproduceerd worden, bijvoorbeeld als de servercapaciteit moet uitgebreid worden, als er moet gemigreerd worden naar een nieuwere versie van het besturingssysteem, enz. Wanneer je als systeembeheerder een serverpark van tientallen, honderden of zelfs duizenden machines (hetzij fysiek, hetzij virtueel) moet beheren, dan is het manueel opzetten, of zelfs scripten van de configuratie niet meer voldoende. In dit soort omgevingen wordt steevast gebruik gemaakt van Configuration Management Systems om de taaklast beheersbaar te houden.</p>
+<p>In deze cursus maken we gebruik van het Configuration Management System <a href="https://www.ansible.com">Ansible</a>, omdat dit een voor beginners toegankelijk systeem is dat qua filosofie en logica aansluit bij klassieke shell scripts. In het werkveld is de kans groot dat je ook met andere Configuration Management Systems in aanraking komt, bijvoorbeeld <a href="https://puppet.com/">Puppet</a> of <a href="https://www.chef.io/">Chef</a>.</p>
+<p>Andere termen die gebruikt worden in plaats van Infrastructure Automation:</p>
+<ul>
+<li><strong>Infrastructure as Code:</strong> de sleutel tot automatiseren bestaat er in om de gewenste toestand van een systeem precies te beschrijven in een daarvoor ontworpen taal. Puppet heeft hiervoor bijvoorbeeld een <em>Domain Specific Language</em> (DSL) ontwikkeld, terwijl Ansible gebruik maakt van een bestaande taal voor het beschrijven van gestructureerde data, nl. <a href="https://yaml.org/">YAML</a>. Deze beschrijving is uitvoerbaar (executable), d.w.z. een configuration management system kan aan de hand van deze beschrijving een systeem naar de gewenste toestand brengen. Je kan dit beschouwen als (bron)code, maar in plaats van software bouw je er infrastructuur mee. Dit brengt als bijkomend voordeel met zich mee dat allerlei best-practices uit software-ontwikkeling op die manier ook kunnen toegepast worden in systeembeheer: code bijhouden in een versiebeheersysteem, codeerstijl toepassen, geautomatiseerd testen, geautomatiseerd uitrollen van infrastructuur (CI/CD), enz.</li>
+<li><strong>GitOps:</strong> tegenwoordig hou je broncode zo goed als altijd bij in een versiebeheersysteem. Git is in dit domein marktleider geworden. Daarom wordt het bijhouden van infrastructuur-code in Git soms ook GitOps genoemd.</li>
+<li>De term <em>Infrastructure Automation</em> wordt vaak verward met <strong>DevOps</strong>. <em>DevOps</em> is de naam van de professionele beweging (ontstaan <a href="https://legacy.devopsdays.org/events/2009-ghent/">in 2009 in Gent</a>) die software-ontwikkelaars (DEVelopers) en systeembeheerders (OPerationS) nauwer wil laten samenwerken met als doel kwalitatievere software. In een klassieke IT-organisatiestructuur zijn software-ontwikkeling en infrastructuur (= systeem- en netwerkbeheer) aparte afdelingen met hun eigen hiërarchie, manier van budgetteren, operationele doelstellingen, enz. Dat leidt tot allerlei kwaliteitsproblemen. Door de bedrijfsstructuur te organiseren rond interdisciplinaire product-teams, komt men tot een betere samenwerking, gedeelde verantwoordelijkheid en gemeenschappelijke doelstellingen. DevOps is dus een term die eerder te maken heeft met bedrijfscultuur en -organisatie dan met technische onderwerpen. Het is wel zo dat een verregaande automatisering typisch is voor DevOps-teams, en wellicht is de verwarring zo ontstaan.</li>
+</ul>
+<p><strong>Binnen het curriculum</strong> situeert deze cursus zich in het keuzepakket <em>System and Network Administrator</em> van het derde modeltraject. Qua inhoud gaat het verder op de olods <em>Linux</em> en <em>System Engineering Project</em> uit het 2e modeltraject.</p>
+<p>De kennis en vaardigheden die je in <em>Infrastructure Automation</em> opdoet, kan je ook toepassen in <em>DevOps project: Operations</em>.</p>
+<p><img alt="Infrastructure Automation binnen het curriculum" src="img/infra-plaats-curriculum.png" /></p>
+<h2 id="leerdoelen-en-competenties">Leerdoelen en competenties</h2>
+<ul>
+<li>Kan het opzetten van netwerkservices automatiseren met een configuration management system</li>
+<li>Kan reproduceerbare virtuele omgevingen installeren en configureren (Infrastructure as Code) met geschikte tools voor de automatisering van de gehele levenscyclus van een VM (bv. Packer, Vagrant, Terraform, Docker Compose, ...)</li>
+<li>Kan orchestratiesysteem voor containervirtualisatie configureren en beheren (bv. Kubernetes)</li>
+<li>Kan de werking van een it-systeem opvolgen met een logging- of monitoringsysteem om defecten te detecteren en de oorzaak op te sporen</li>
+<li>Kan een package-managementsysteem of repository opzetten en onderhouden en daarbij de problematiek van afhankelijkheden (dependencies) onder controle houden</li>
+</ul>
+<h2 id="leerinhoud">Leerinhoud</h2>
+<p><strong>Opmerking</strong> In academiejaar 2021-2022 hebben studenten die dit olod volgen het olod <em>Linux</em>, dat als begincompetentie geldt, nog niet gekregen. Dit academiejaar wordt dan ook een overgangsjaar waar de belangrijkste onderwerpen die in <em>Linux</em> gegeven zullen worden toch in dit vak aan bod zullen komen.</p>
+<ul>
+<li>Inleiding, opzetten werkomgeving</li>
+<li>Module 1: containervirtualisatie<ul>
+<li>Docker sandbox-omgeving opzetten</li>
+</ul>
+</li>
+<li>Module 2: continuous integration/delivery<ul>
+<li>Een CI/CD pipeline opzetten met Jenkins</li>
+<li>Package management</li>
+</ul>
+</li>
+<li>Module 3: bottom-up troubleshooting <strong>(overgangsjaar)</strong><ul>
+<li>Op een systematische en grondige manier configuratiefouten opsporen en oplossen</li>
+</ul>
+</li>
+<li>Module 4: configuration management<ul>
+<li>LAMP-stack geautomatiseerd opzetten met Ansible</li>
+<li>Minimaal functioneel netwerk opzetten: router, DNS, DHCP <strong>(overgangsjaar)</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="leermateriaal">Leermateriaal</h2>
+<p>Het leermateriaal voor deze cursus bestaat uit:</p>
+<ul>
+<li>De informatie op Chamilo</li>
+<li>Online cursusmateriaal:<ul>
+<li><a href="https://hogenttin.github.io/infra-syllabus/">Deze syllabus</a> met studiewijzer</li>
+<li><a href="https://hogenttin.github.io/infra-slides/">De slides bij de les</a></li>
+<li><a href="https://github.com/HoGentTIN/infra-demo">Vagrant demo-omgeving</a></li>
+<li><a href="https://github.com/HoGentTIN/infra-labs">Opgave van de labo-oefeningen</a></li>
+</ul>
+</li>
+<li>Handleidingen van de gebruikte software (online te raadplegen):<ul>
+<li>Ansible: <a href="https://docs.ansible.com/">https://docs.ansible.com/</a></li>
+<li>cAdvisor: <a href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a></li>
+<li>Docker: <a href="https://docs.docker.com/">https://docs.docker.com/</a></li>
+<li>ElasticSearch, Kibana: <a href="https://www.elastic.co/guide/index.html">https://www.elastic.co/guide/index.html</a></li>
+<li>Fluentd: <a href="https://docs.fluentd.org/">https://docs.fluentd.org/</a></li>
+<li>Grafana: <a href="https://grafana.com/docs/">https://grafana.com/docs/</a></li>
+<li>Prometheus: <a href="https://prometheus.io/docs/">https://prometheus.io/docs/</a></li>
+<li>enz.</li>
+</ul>
+</li>
+</ul>
+<h3 id="aanbevolen-boeken">Aanbevolen boeken</h3>
+<p>Er is geen verplicht handboek, maar verderop geven we wel enkele aanbevolen titels op voor de geïnteresseerde student. De cursus kan perfect gevolgd worden zonder toegang te hebben tot deze boeken, maar kunnen wel interessant zijn om de achtergrondkennis en inzichten in de leerstof te verhogen, of als naslagwerk wanneer je deze tools voor je job nodig hebt.</p>
+<ul>
+<li>Geerling, J. (2020) <em>Ansible for DevOps: Server and configuration management for humans.</em> LeanPub. <a href="https://leanpub.com/ansible-for-devops">https://leanpub.com/ansible-for-devops</a></li>
+<li>McKendrick, R. &amp; Gallagher, S (2020) <em>Mastering Docker.</em> 4th Edition. Packt Publishing. <a href="https://www.packtpub.com/product/mastering-docker-fourth-edition/9781839216572">https://www.packtpub.com/product/mastering-docker-fourth-edition/9781839216572</a></li>
+<li>Sesto, V. (2021) <em>Practical Ansible: Configuration Management from Start to Finish.</em> Apress. <a href="https://link.springer.com/book/10.1007%2F978-1-4842-6485-0">https://link.springer.com/book/10.1007%2F978-1-4842-6485-0</a></li>
+</ul>
+<p><strong>Opmerking:</strong> In deze lijst staat een boek met een verwijzing naar Springer Link. Deze kan je dankzij een abonnement van de HOGENT-bib <em>gratis downloaden</em> als PDF of Epub. Het volstaat om de link aan te klikken vanop de hogeschoolcampus of na het aanzetten van VPN. Er is verder geen authenticatie nodig, je kan het e-boek meteen downloaden.</p>
+<h3 id="software">Software</h3>
+<p>We gebruiken een heleboel softwarepakketten in dit olod, maar die hoef je niet noodzakelijk allemaal meteen te installeren. Het grootste deel van de installaties gebeurt immers binnen een (reproduceerbare) virtuele machine.</p>
+<p>Volgende software heb je wel nodig:</p>
+<ul>
+<li>Een goede teksteditor. <strong>Visual Studio Code</strong> is aanbevolen, bij voorkeur met volgende plugins:<ul>
+<li>GitLens - Git supercharged (Eric Amodio)</li>
+<li>Markdown All in One (Yu Zhang)</li>
+<li>markdownlint (David Anson)</li>
+<li>Remote - Containers (Microsoft)</li>
+<li>Remote - SSH (Microsoft)</li>
+<li>Remote - SSH: Editing configuration Files (Microsoft)</li>
+<li>ShellCheck (Timon Wong)</li>
+</ul>
+</li>
+<li><strong>VirtualBox</strong>, de laatste versie bij aanvang van het semester (incl. het Extension Pack)</li>
+<li><strong>Vagrant</strong>, een command-line tool voor het geautomatiseerd opzetten van reproduceerbare virtuele omgevingen in VirtualBox (of een andere hypervisor.</li>
+<li><strong>Git client</strong> (incl. Git Bash onder Windows)</li>
+<li>Linux- en Mac-gebruikers installeren ook <strong>Ansible</strong>. Dit is niet ondersteund op Windows, maar daarvoor is er een workaround voorzien.</li>
+</ul>
+<p>De eenvoudigste manier om de nodige software te installeren is via een <strong>package manager</strong>. Bijvoorbeeld <a href="https://chocolatey.org/">Chocolatey</a> voor Windows (in een Administrator-terminal):</p>
+<pre><code class="language-console">PS&gt; choco install git
+PS&gt; choco install vscode
+PS&gt; choco install virtualbox
+PS&gt; choco install vagrant
+</code></pre>
+<p>of <a href="https://brew.sh/">Homebrew</a> voor Mac:</p>
+<pre><code class="language-console">$ brew install bash
+$ brew install git
+$ brew cask install visual-studio-code
+$ brew cask install virtualbox
+$ brew cask install virtualbox-extension-pack
+$ brew cask install vagrant
+$ brew install ansible
+</code></pre>
+<p>Linux-gebruikers zijn deze manier van werken gewend en gebruiken de package manager van hun distributie, bv. <code>apt</code> (Debian, Ubuntu), <code>dnf</code> (Fedora en RHEL-familie), <code>pacman</code> (Arch Linux), enz.</p>
+<h2 id="werkvormen">Werkvormen</h2>
+<p>In dit opleidingsonderdeel wordt hoofdzakelijk gewerkt aan de hand van labo-opdrachten. De ondersteunende studiematerialen en deze syllabus moeten je in staat stellen die met succes af te werken.</p>
+<h3 id="reguliere-studenten">Reguliere studenten</h3>
+<p>Tijdens de reguliere lessen geeft de lector klassikaal instructie, waarna studenten zelfstandig en op eigen tempo werken aan de labo-opdrachten. Studenten hebben op regelmatige basis een voortgangsgesprek met de lector en kunnen dan uitleg vragen bij specifieke problemen.</p>
+<p>Als de contactmomenten omwille van corona-maatregelen niet op de campus kunnen doorgaan, dan gebeuren zowel de klassikale instructie als individuele opvogingsgesprekken via Microsoft Teams (videoconferencing).</p>
+<p>De lector zal elke wijziging in deze regeling via Chamilo aankondigen, maar je mag in principe uitgaan van volgende regeling:</p>
+<ul>
+<li><strong>Code groen:</strong> contactmomenten gaan door op de campus</li>
+<li><strong>Code geel/oranje/rood:</strong> contactmomenten gaan door via Teams</li>
+</ul>
+<h3 id="afstandsleren-tile">Afstandsleren (TILE)</h3>
+<p><strong>Studenten afstandsleren</strong> verwerken de leerstof op eigen tempo, aan de hand van de aangeboden studiematerialen, en voeren de labo-opdrachten uit.</p>
+<p>Ze kunnen op de contactmomenten voor studenten afstandsleren een afspraak maken met de lector voor een individueel voortgangsgesprek en opvolging (zie <a href="#studiebegeleiding-en-planning">Studiebegeleiding en planning</a>).</p>
+<h2 id="werk-en-leeraanwijzingen">Werk- en leeraanwijzingen</h2>
+<p>Het werken met labo-opdrachten vergt een zekere mate van zelfstandigheid van jou als student, maar dat is precies ook een attitude die verwacht wordt van een systeembeheerder. Je neemt dus zelf initiatief om de nodige kennis te vergaren en zoekt naar oplossingen voor de problemen die je ongetwijfeld zal tegenkomen.</p>
+<p>Help elkaar daarin: samenwerken en kennis delen wordt van harte aangemoedigd. De lector is uiteraard beschikbaar om je bij te staan als je vast komt te zitten en kan je tips geven of verwijzen naar geschikte aanvullende studiematerialen.</p>
+<p><strong>Reguliere studenten</strong> moeten in de loop van het semester minstens drie keer persoonlijk bij de lector langs komen om deelresultaten te tonen. Kom zeker langs als je ergens vast zit, zodat de lector je terug op weg kan helpen!</p>
+<h2 id="studiebegeleiding-en-planning">Studiebegeleiding en planning</h2>
+<h3 id="studiebegeleiding-reguliere-studenten">Studiebegeleiding reguliere studenten</h3>
+<p>Studenten stellen hun vragen over de cursus bij voorkeur tijdens de voorziene contactmomenten. Buiten de contactmomenten kunnen studenten vragen stellen via Teams, meer bepaald het chat-kanaal van het Team voor dit vak. Op Chamilo vind je een link naar het juiste kanaal. Studenten worden aangemoedigd om daar ook vragen van anderen te beantwoorden.</p>
+<p>De lector rechtstreeks contacteren via e-mail of Teams chat doe je enkel als je een persoonlijke vraag hebt. Alle vragen over de leerstof gaan via het Teams-kanaal, zoals hierboven beschreven, zodat we jullie vragen hoogstens één keer moeten beantwoorden en iedereen meteen het antwoord kan zien.</p>
+<h3 id="studiebegeleiding-afstandsleren-tile">Studiebegeleiding Afstandsleren (TILE)</h3>
+<p>Studenten afstandsleren kunnen vragen stellen tijdens de contactmomenten voor TILE. Als deze contactmomenten niet op de campus doorgaan, gebeurt dit via Teams (videoconferencing). De precieze regeling wordt vooraf via Chamilo aangekondigd.</p>
+<p>Buiten de contactmomenten kunnen studenten vragen stellen via Teams, meer bepaald het chat-kanaal van het Team voor dit vak. Op Chamilo vind je een link naar het juiste kanaal. Studenten worden aangemoedigd om daar ook vragen van anderen te beantwoorden.</p>
+<p>De lector rechtstreeks contacteren via Teams chat of e-mail doe je enkel als je een persoonlijke vraag hebt. Alle vragen over de leerstof gaan via het Teams-kanaal, zoals hierboven beschreven, zodat we jullie vragen hoogstens één keer moeten beantwoorden en iedereen meteen het antwoord kan zien.</p>
+<h3 id="studiebegeleiding-2e-examenkans">Studiebegeleiding 2e examenkans</h3>
+<p>Studenten die doorverwezen worden naar de 2e examenkans, worden in principe niet begeleid en voeren de labo-opdrachten uit op eigen kracht. De lector zal je tijdens de feedback meedelen of en hoe je eventueel contact kan opnemen tijdens het zomerreces.</p>
+<h3 id="weekplanning">Weekplanning</h3>
+<p>Volgende weekplanning is enkel bij benadering! Wanneer er lessen wegvallen, bijvoorbeeld door verlofdagen, kunnen er nog verschuivingen gebeuren.</p>
+<ul>
+<li>In de weken waar een specifiek onderwerp opgegeven staat, is er klassikale instructie voorzien over dat onderwerp.</li>
+<li>Tijdens de weken waar niets staat, is er ruimte voor het werken aan de labo-opdrachten en individuele opvolging</li>
+<li>Er zijn twee <strong>gequoteerde troubleshooting-labo's</strong> gepland met (voor reguliere studenten) verplichte aanwezigheid.<ul>
+<li>Bij ziekte volg je de normale procedure voor het wettigen van je afwezigheid. Contacteer ook zo snel mogelijk je lector voor een inhaalopdracht.</li>
+<li>Bij het begin van een troubleshooting-opdracht krijg je een opstelling voorgeschoteld (typisch een virtuele machine) met configuratiefouten. Het is jouw taak die zo snel mogelijk systematisch op te sporen en op te lossen <strong>volgens de methode die je aangeleerd krijgt.</strong> Over dit proces en je resultaten schrijf je een laboverslag dat je indient op Chamilo.</li>
+<li><strong>Studenten afstandsleren</strong> kunnen de troubleshooting-labo's thuis uitvoeren. Spreek met de lector in de loop van de voorziene weken een moment af waarop je tijd hebt om hier aan te werken. Op het afgesproken tijdstip krijg je een downloadlink naar de opgave en dien je vóór de afgesproken deadline (in principe 4 uur na ontvangst van de opgave) je verslag in op Chamilo.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Lesweek</th>
+<th align="left">Onderwerp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="left">Inleiding, praktische afspraken</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">Installatie software</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">M1. Containervirtualisatie</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">M2. Continuous Integration/Delivery</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">M3. Bottom-up Troubleshooting</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="left">Troubleshooting-labo 1</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="left">M4. Configuration Management</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="left">Troubleshooting-labo 2</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="left">Inhaalsessie (indien ingericht door je lector)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evaluatie">Evaluatie</h2>
+<p>De evaluatie van dit opleidingsonderdeel gebeurt volledig via permanente evaluatie. Meer bepaald word je beoordeeld op de manier waarop je de opgegeven labo-opdrachten hebt uitgevoerd.</p>
+<p>Troubleshooting wordt geëvalueerd op basis van vaardigheidstests, de andere taken op basis van een portfolio dat je samenstelt tijdens de loop van het semester en dat je op een evaluatiemoment tijdens de examenperiode komt verdedigen. Dat portfolio bestaat concreet uit volgende elementen:</p>
+<ul>
+<li>De broncode, door elke student bijgehouden in een toegewezen Git repository</li>
+<li>Gedetailleerde labo-verslagen, eveneens bijgehouden in Git of desgevallend ingediend via Chamilo</li>
+<li>Demonstratie van deelresultaten aan de lector tijdens het semester</li>
+<li>Demonstratie van het eindresultaat aan de lector tijdens de examenperiode</li>
+</ul>
+<p>De toekenning van het examencijfer gebeurt op basis van “rubrics” die beschreven worden in de evaluatiekaart die gepubliceerd wordt op Chamilo.</p>
+<p>In een tabel worden een aantal criteria opgesomd, waar je aan moet voldoen. Je kan “voldoen” op verschillende niveaus, meer bepaald “bekwaam”, “gevorderd”, “deskundig”, of in het slechtste geval “nog niet bekwaam”. In de evaluatiekaart wordt beschreven wat je precies moet doen om elk niveau te behalen.</p>
+<p>Om te slagen voor dit vak moet je aantonen dat je voor alle technische criteria minstens “bekwaam” bent. Met andere woorden, zelfs als je voor slechts één criterium “nog niet bekwaam” bevonden wordt, kan je niet slagen, hoe goed je ook de andere modules hebt afgewerkt. De niet-technische criteria (bv. rapportering) kunnen het examencijfer afhankelijk van het behaalde niveau nog positief of negatief beïnvloeden (en eventueel zelfs nog onder 10/20 doen zakken!).</p>
+<p><strong>Merk op</strong> dat je zowel een werkend product moet opleveren (= broncode) als de verslagen indienen én demo’s geven. Als één van de deliverables ontbreekt, wordt de opdracht beschouwd als niet gerealiseerd.</p>
+<h3 id="tussentijdse-deadlines">Tussentijdse deadlines</h3>
+<p>Studenten moeten <em>minstens drie keer</em> tijdens het semester deelresulaten opleveren en persoonlijk demonstreren aan de lector. Deze periodes worden beschouwd als <em>tussentijdse deadlines,</em> waarbij de afspraken gelden die in het Onderwijs- en Examenreglement (OER) en de Departementale Aanvullingen daarop (DOER) gespecifieerd zijn. Niet tijdig deelresultaten opleveren wordt dus beschouwd als het niet respecteren van tussentijdse deadlines en wordt als dusdanig gesanctioneerd. Een student krijgt dan voor de labo-opdrachten die niet tijdig opgeleverd werden de beoordeling “Nog niet bekwaam” en kan bijgevolg ook niet slagen.</p>
+<h3 id="specifieke-afspraken-reguliere-studenten">Specifieke afspraken reguliere studenten</h3>
+<p>Reguliere studenten gaan tijdens de contactmomenten regelmatig langs bij de lector voor individuele opvolging en voor het opleveren van deelresultaten.</p>
+<p>Ook als je weinig tot niets gerealiseerd hebt, kom je langs. Dat is immers een teken dat je ergens vast zit, en de lector kan je dan opnieuw op weg helpen.</p>
+<h3 id="specifieke-afspraken-afstandsleren">Specifieke afspraken afstandsleren</h3>
+<p>Studenten afstandsleren kunnen op verschillende manieren deelresultaten opleveren:</p>
+<ul>
+<li>aan de hand van een screencast (bv. publiceren via Youtube of Panopto, link doorsturen naar de lector),</li>
+<li>via videoconferencing (Microsoft Teams, na afspraak),</li>
+<li>tijdens de contactmomenten voor TILE-studenten, als de lector daar aanwezig is (en enkel na afspraak)</li>
+</ul>
+<h3 id="tweede-examenkans">Tweede examenkans</h3>
+<p>Wie niet slaagt, krijgt een tweede examenkans in de vorm van een individuele opdracht. De precieze opdracht hangt af van je evaluatie en bestaat concreet uit:</p>
+<ul>
+<li>één labo-opdracht die voor iedereen hetzelfde is (onderwerp: Kubernetes)</li>
+<li>labo's afwerken van de modules waar je je bekwaamheid nog niet hebt aangetoond.</li>
+</ul>
+<p>Deze individuele opdracht wordt meteen vastgelegd en besproken op het finale evaluatiemoment. Als je nog geen individuele opdracht gekregen hebt op het evaluatiemoment (bijvoorbeeld omdat je afwezig was), dan kom je naar de feedback.</p>
+<p>Studenten afstandsleren kunnen dit ook per e-mail regelen of een afspraak maken om dit te bespreken via Teams, mits dit gebeurt vóór aanvang van het intersemestrieel reces.</p>
+<p><strong>Wie na afloop van de feedback nog geen afspraak gemaakt heeft voor een individuele opdracht, geeft daarmee te kennen niet te willen deelnemen aan de 2e examenkans.</strong></p>
+<h2 id="licentie-informatie">Licentie-informatie</h2>
+<p>Deze syllabus is samengesteld door <a href="https://github.com/bertvv/">Bert Van Vreckem</a>. De tekst van de syllabus en de slides vallen onder de <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationale Publieke Licentie</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.3.0
+Build Date UTC : 2022-06-21 10:43:48.053452+00:00
+-->
