@@ -9,4 +9,3 @@ nav:
   - CICD: ci-cd.md
   - Troubleshooting: troubleshooting.md
   - ConfigMgmt: cfgmgmt.md
-  - Monitoring: monitoring.md
